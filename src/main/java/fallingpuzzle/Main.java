@@ -1,4 +1,4 @@
-package FallingPuzzle;
+package fallingpuzzle;
 
 public class Main {
 	
