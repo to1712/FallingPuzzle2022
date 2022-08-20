@@ -4,7 +4,7 @@ package fallingpuzzle;
 import fallingpuzzle.controller.scene.FPMainMenuController;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+//import javafx.stage.StageStyle;
 
 public class FPapplication extends javafx.application.Application  {
 	
@@ -17,7 +17,7 @@ public class FPapplication extends javafx.application.Application  {
         primaryStage.setResizable(false);
         primaryStage.setWidth(Settings.WINDOW_Y_SIZE);
         primaryStage.setHeight(Settings.WINDOW_X_SIZE);
-        primaryStage.initStyle(StageStyle.UNDECORATED);
+        //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         //primaryStage.draw();
     }
