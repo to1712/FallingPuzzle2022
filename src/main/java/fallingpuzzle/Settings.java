@@ -4,7 +4,7 @@ public class Settings {
 	public final static int WINDOW_X_SIZE = 950;
 	public final static int WINDOW_Y_SIZE = 700;
 	
-//ciao
+
 }
 
 

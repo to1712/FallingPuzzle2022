@@ -14,7 +14,7 @@
             <Image url="@../images/FallingBackGround.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="147.0" layoutY="156.0" opacity="0.7" prefHeight="664.0" prefWidth="411.0" style="-fx-background-color: #CDAA7D;" />
+      <AnchorPane fx:id="matrixBackground" layoutX="147.0" layoutY="156.0" opacity="0.7" prefHeight="664.0" prefWidth="411.0" style="-fx-background-color: #CDAA7D;" />
       <ImageView fx:id="Sfondo" fitHeight="750.0" fitWidth="659.0" layoutX="-21.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/CornicePlay.png" />
