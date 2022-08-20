@@ -15,7 +15,7 @@ public class FPMainMenuController extends Controller {
 
     @FXML
     void play(ActionEvent event) {
-    	
+    	FPapplication.setScene( FPPlayController.getScene() );
     }	
     public void play() {}
   private static Scene scene;
