@@ -2,16 +2,17 @@ package fallingpuzzle;
 
 
 import fallingpuzzle.controller.scene.FPMainMenuController;
-import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class FPapplication extends Application  {
+public class FPapplication extends javafx.application.Application  {
+	
+	private static Stage primaryStage;
 	
 	//@Override
     public void start(Stage primaryStage) throws Exception {
-        //Game game = new Game();
+    	FPapplication.primaryStage = primaryStage;
     	primaryStage.setScene( FPMainMenuController.getScene() );
         primaryStage.setResizable(false);
         primaryStage.setWidth(606);
@@ -20,8 +21,14 @@ public class FPapplication extends Application  {
         primaryStage.show();
         //primaryStage.draw();
     }
+    
    public static void main(String[] args) {
         launch(args);
     }
+   
+   public static void setScene( Scene scene ) {
+		if( primaryStage == null ) return;
+		primaryStage.setScene( scene );
+	}
 
 }
