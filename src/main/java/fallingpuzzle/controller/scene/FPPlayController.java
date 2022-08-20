@@ -1,13 +1,9 @@
 package fallingpuzzle.controller.scene;
 
 
-import java.io.File;
-import java.net.URL;
-import java.util.ResourceBundle;
 import fallingpuzzle.controller.Controller;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class FPPlayController extends Controller {

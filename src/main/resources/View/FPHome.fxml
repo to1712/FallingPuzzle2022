@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="600.0" style="-fx-background-image: #9C661F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fallingpuzzle.controller.scene.FPMainMenuController">
+<AnchorPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="600.0" style="-fx-background-image: #9C661F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fallingpuzzle.controller.scene.FPMainMenuController">
    <children>
       <ImageView fitHeight="772.0" fitWidth="606.0" layoutX="-1.0" layoutY="-3.0">
          <image>
@@ -18,7 +18,7 @@
             <Font name="System Bold" size="50.0" />
          </font>
       </Button>
-      <Button layoutX="226.0" layoutY="451.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="149.0" style="-fx-background-color: transparent;" text="Exit" textFill="#f8f7f7">
+      <Button fx:id="exitButton" layoutX="228.0" layoutY="472.0" mnemonicParsing="false" onAction="#Exit" prefHeight="20.0" prefWidth="149.0" style="-fx-background-color: transparent;" text="Exit" textFill="#f8f7f7">
          <font>
             <Font name="System Bold" size="42.0" />
          </font>
