@@ -4,7 +4,7 @@ package fallingpuzzle;
 import fallingpuzzle.controller.scene.FPMainMenuController;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+//import javafx.stage.StageStyle;
 
 public class FPapplication extends javafx.application.Application  {
 	
