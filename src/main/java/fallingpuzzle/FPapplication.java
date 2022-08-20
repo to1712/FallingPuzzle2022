@@ -15,6 +15,7 @@ public class FPapplication extends javafx.application.Application  {
     	FPapplication.primaryStage = primaryStage;
     	primaryStage.setScene( FPMainMenuController.getScene() );
         primaryStage.setResizable(false);
+        primaryStage.setTitle("IGPE'S Project");
         primaryStage.setWidth(Settings.WINDOW_Y_SIZE);
         primaryStage.setHeight(Settings.WINDOW_X_SIZE);
         //primaryStage.initStyle(StageStyle.UNDECORATED);

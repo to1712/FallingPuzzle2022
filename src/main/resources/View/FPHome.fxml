@@ -6,9 +6,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" style="-fx-background-image: #9C661F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fallingpuzzle.controller.scene.FPMainMenuController">
+<AnchorPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="700.0" style="-fx-background-image: #9C661F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fallingpuzzle.controller.scene.FPMainMenuController">
    <children>
-      <ImageView fitHeight="906.0" fitWidth="706.0" layoutX="-1.0" layoutY="-3.0">
+      <ImageView fitHeight="960.0" fitWidth="706.0" layoutX="-1.0" layoutY="-3.0">
          <image>
             <Image url="@../images/Falling.png" />
          </image>
