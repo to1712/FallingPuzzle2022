@@ -7,19 +7,19 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="772.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="779.0" fitWidth="613.0" layoutX="-1.0" layoutY="-2.0">
+      <ImageView fitHeight="906.0" fitWidth="707.0" layoutX="-1.0" layoutY="-2.0">
          <image>
             <Image url="@../images/FallingBackGround.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="137.0" layoutY="149.0" opacity="0.7" prefHeight="558.0" prefWidth="345.0" style="-fx-background-color: #CDAA7D;" />
-      <ImageView fx:id="Sfondo" fitHeight="622.0" fitWidth="527.0" layoutX="-7.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+      <AnchorPane layoutX="147.0" layoutY="156.0" opacity="0.7" prefHeight="664.0" prefWidth="411.0" style="-fx-background-color: #CDAA7D;" />
+      <ImageView fx:id="Sfondo" fitHeight="750.0" fitWidth="659.0" layoutX="-21.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/CornicePlay.png" />
          </image>
       </ImageView>
-      <Canvas height="779.0" layoutX="-1.0" layoutY="-2.0" width="613.0" />
+      <Canvas height="906.0" layoutX="-1.0" layoutY="-2.0" width="707.0" />
    </children>
 </AnchorPane>

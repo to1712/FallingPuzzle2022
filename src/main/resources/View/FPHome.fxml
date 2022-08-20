@@ -6,21 +6,21 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="766.0" prefWidth="600.0" style="-fx-background-image: #9C661F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fallingpuzzle.controller.scene.FPMainMenuController">
+<AnchorPane fx:id="home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" style="-fx-background-image: #9C661F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fallingpuzzle.controller.scene.FPMainMenuController">
    <children>
-      <ImageView fitHeight="772.0" fitWidth="606.0" layoutX="-1.0" layoutY="-3.0">
+      <ImageView fitHeight="906.0" fitWidth="706.0" layoutX="-1.0" layoutY="-3.0">
          <image>
             <Image url="@../images/Falling.png" />
          </image>
       </ImageView>
-      <Button fx:id="playButton" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" onAction="#play" prefHeight="107.0" prefWidth="191.0" style="-fx-background-color: traspa;" text="Play" textFill="#fffdfd">
+      <Button fx:id="playButton" layoutX="245.0" layoutY="367.0" mnemonicParsing="false" onAction="#play" prefHeight="128.0" prefWidth="215.0" style="-fx-background-color: traspa;" text="Play" textFill="#fffdfd">
          <font>
-            <Font name="System Bold" size="50.0" />
+            <Font name="System Bold" size="60.0" />
          </font>
       </Button>
-      <Button fx:id="exitButton" layoutX="228.0" layoutY="472.0" mnemonicParsing="false" onAction="#Exit" prefHeight="20.0" prefWidth="149.0" style="-fx-background-color: transparent;" text="Exit" textFill="#f8f7f7">
+      <Button fx:id="exitButton" layoutX="270.0" layoutY="495.0" mnemonicParsing="false" onAction="#Exit" prefHeight="107.0" prefWidth="161.0" style="-fx-background-color: transparent;" text="Exit" textFill="#f8f7f7">
          <font>
-            <Font name="System Bold" size="42.0" />
+            <Font name="System Bold" size="50.0" />
          </font>
       </Button>
    </children>
