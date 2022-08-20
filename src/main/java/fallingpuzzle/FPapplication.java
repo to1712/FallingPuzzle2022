@@ -15,8 +15,8 @@ public class FPapplication extends javafx.application.Application  {
     	FPapplication.primaryStage = primaryStage;
     	primaryStage.setScene( FPMainMenuController.getScene() );
         primaryStage.setResizable(false);
-        primaryStage.setWidth(606);
-        primaryStage.setHeight(772);
+        primaryStage.setWidth(Settings.WINDOW_Y_SIZE);
+        primaryStage.setHeight(Settings.WINDOW_X_SIZE);
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         //primaryStage.draw();
