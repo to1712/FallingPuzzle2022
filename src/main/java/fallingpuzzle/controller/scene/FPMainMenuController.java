@@ -11,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 //import javafx.stage.Stage;
 import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.Controller;
+import fallingpuzzle.model.Game;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;  
 public class FPMainMenuController extends Controller {
@@ -27,6 +28,8 @@ public class FPMainMenuController extends Controller {
 
     @FXML
     void play(ActionEvent event) {
+    	Game game=new Game();
+		game.draw();
     	FPapplication.setScene( FPPlayController.getScene() );
     }	
     @FXML
