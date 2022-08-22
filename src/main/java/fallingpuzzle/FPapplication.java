@@ -1,5 +1,14 @@
 package fallingpuzzle;
 
-public class FPapplication {
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class FPapplication extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		
+	}
 
 }
