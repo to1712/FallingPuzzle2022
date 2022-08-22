@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>IGPE</groupId>
   <artifactId>FallingPuzzle2022</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.3</version>
   <name>FallingPuzzle2022</name>
   <properties>
 		<maven.compiler.source>15</maven.compiler.source>
