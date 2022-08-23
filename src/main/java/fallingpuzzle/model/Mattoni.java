@@ -7,6 +7,7 @@ public class Mattoni {
 	public static final int FOUR=4;
 	private int mattHigh;
 	private int mattWidth;
+	private boolean selezionato=false;
 	
 	private int tipo;
 	
@@ -38,6 +39,13 @@ public class Mattoni {
 	
 	public int getHigh() {
 		return mattHigh;
+	}
+	
+	public void setSelezionato(boolean selezionato) {
+		this.selezionato=selezionato;
+	}
+	public boolean eSelezionato() {
+		return selezionato;
 	}
 	
 	

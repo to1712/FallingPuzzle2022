@@ -12,7 +12,6 @@ public class FPapplication extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			//FPMainController controller=new FPMainController();
 			Parent root= FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
 			Scene home= new Scene(root);
 			primaryStage.setScene(home);
