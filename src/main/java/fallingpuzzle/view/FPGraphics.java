@@ -1,6 +1,7 @@
 package fallingpuzzle.view;
 
 import fallingpuzzle.model.Griglia;
+import fallingpuzzle.model.Mattoni;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -35,10 +36,40 @@ public class FPGraphics extends StackPane{
 		canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		for(int i=0; i<this.griglia.WIDTH; i++) {
 			for(int j=0; j<this.griglia.HEIGHT; j++) {
-				canvas.getGraphicsContext2D().setFill(Color.YELLOW);
+				canvas.getGraphicsContext2D().setFill(Color.BLACK);
 				canvas.getGraphicsContext2D().strokeRect(i*DIM, j*DIM, DIM, DIM);
-				canvas.getGraphicsContext2D().fillRect(i*DIM, j*DIM, DIM, DIM);
+				//canvas.getGraphicsContext2D().fillRect(i*DIM, j*DIM, DIM, DIM);
 			}
 		}
+		
+		for(Mattoni m : this.griglia.getMattone()){
+			switch (m.getTipo()) {
+			case 1: canvas.getGraphicsContext2D().setFill(Color.INDIANRED);
+			break;
+			case 2: canvas.getGraphicsContext2D().setFill(Color.DARKORANGE);
+			
+			break;
+			case 3: canvas.getGraphicsContext2D().setFill(Color.DARKCYAN);
+			
+			break;
+			case 4: canvas.getGraphicsContext2D().setFill(Color.FORESTGREEN);
+			
+			break;
+			default:canvas.getGraphicsContext2D().setFill(Color.WHITE);
+				break;
+			}
+			canvas.getGraphicsContext2D().fillRect(m.getWidth() * DIM, m.getHigh() * DIM, DIM * m.getTipo(), DIM);
+			
+			if(m.eSelezionato()) {
+				canvas.getGraphicsContext2D().setFill(Color.YELLOW);
+				canvas.getGraphicsContext2D().strokeRect(m.getWidth()*DIM, m.getHigh()*DIM, m.getTipo()*DIM, DIM);
+			}
+			else {
+				canvas.getGraphicsContext2D().setFill(Color.BLACK);
+				canvas.getGraphicsContext2D().strokeRect(m.getWidth()*DIM, m.getHigh()*DIM, m.getTipo()*DIM, DIM);
+			}
+		}
+		
+		
 	}
 }
