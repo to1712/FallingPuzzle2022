@@ -23,8 +23,7 @@ public class FPMainController {
 	private Parent root;
 	
 	public void goToPlay(ActionEvent event) throws IOException {
-		Griglia g=new Griglia();
-		FPGraphics graphics=new FPGraphics(g);
+		FPGraphics graphics=new FPGraphics(new Griglia());
 		//home.resize(30,30);
 		//home.setStyle("--fx-background-color: transparent");
 		//home.resize(30,30);
@@ -35,8 +34,6 @@ public class FPMainController {
 		stage.setScene(scene);
 		stage.show();
 		graphics.matrix();
-		g.stampa();
-		g.generationRiga();
 	}
 	 @FXML
 	    void exitGame(ActionEvent event) {

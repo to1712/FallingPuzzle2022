@@ -16,7 +16,6 @@ public class FPapplication extends Application {
 			Scene home= new Scene(root);
 			primaryStage.setScene(home);
 			primaryStage.show();
-			//controller.initialize();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

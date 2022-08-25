@@ -6,6 +6,8 @@ import java.util.Vector;
 
 import javax.print.event.PrintJobAttributeEvent;
 
+import org.graalvm.compiler.lir.amd64.AMD64MathSinOp;
+
 public class Griglia {
 	
 	public final int WIDTH=8;
@@ -22,7 +24,9 @@ public class Griglia {
 		mattoni=new Mattoni[WIDTH][HEIGHT];
 		resetMattonMatrix();
 		mattone=new Vector<Mattoni>();
-		//updateGriglia();
+		aggiornaGriglia();
+		generationRiga();
+		stampa();
 		
 		
 	}
@@ -35,25 +39,28 @@ public class Griglia {
 		while(size<maxsize) {
 			int tipo=0;
 			int x=random.nextInt(8);
-			int y=9;
-			int rand=random.nextInt(4);
-			if(rand==1)
+			int y=11;
+			int rand=random.nextInt(200);
+			if(rand>=0 && rand<40) //20%
 				tipo=1;
-			if(rand==2)
+			if(rand>=40 && rand<110) //35%
 				tipo=2;
-			if(rand==3)
+			if(rand>=110 && rand<180) //35%
 				tipo=3;
-			if(rand==4)
+			if(rand>=180 && rand<=200) //10%
 				tipo=4;
 			
 			Mattoni m=new Mattoni(tipo, x, y);
 			if((x+m.getTipo())-1 <8 &&(m.getTipo()+size)<=maxsize) {
-				size+=m.getTipo();
-				this.mattone.add(m);
-				this.aggiornaGriglia();
+				if(!this.e_sovrapposto(m.getTipo(), m.getWidth(), m.getHigh())) {
+					size+=m.getTipo();
+					this.mattone.add(m);
+					this.aggiornaGriglia();
+				}
 			}
 		}
 	}
+	
 	private void saliRighe() {
 		for(Mattoni m: this.mattone) {
 			m.setWidth(m.getWidth()-1);
@@ -63,7 +70,7 @@ public class Griglia {
 	public void aggiornaGriglia() {
 		resetMattonMatrix();
 		for(Mattoni m: this.mattone) {
-			for(int i=m.getWidth(); i<m.getHigh()+m.getTipo(); i++) {
+			for(int i=m.getWidth(); i<m.getWidth()+m.getTipo(); i++) {
 				this.mattonMatrix[i][m.getHigh()]=m.getTipo();
 				this.mattoni[i][m.getHigh()]=m;
 			}
@@ -106,6 +113,19 @@ public class Griglia {
 				System.out.println(mattonMatrix[j][i]);
 			}
 		}
+	}
+	
+	private boolean e_sovrapposto(int tipo, int width ,int high) {
+		boolean b=false;
+		if(high>=12) {
+			return b;
+		}
+		for(int x=width; x<width+tipo;x++) {
+			if(mattonMatrix[x][high]!=0) {
+				b=true;
+			}
+		}
+		return b;
 	}
 	
 	

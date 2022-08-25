@@ -11,7 +11,7 @@ public class Mattoni {
 	
 	private int tipo;
 	
-	public Mattoni(int tipo,int mattHigh,int mattWidth) {
+	public Mattoni(int tipo,int mattWidth,int mattHigh) {
 		this.tipo=tipo;
 		this.mattHigh=mattHigh;
 		this.mattWidth=mattWidth;
