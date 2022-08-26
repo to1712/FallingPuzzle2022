@@ -1,11 +1,22 @@
 package fallingpuzzle.view;
 
+
+
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
@@ -13,9 +24,11 @@ public class FPGraphics extends StackPane{
 	private final int DIM=50;
 	private Canvas canvas;	
 	private Griglia griglia=null;
+	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));;
 	
 	public FPGraphics(Griglia griglia){
 		AnchorPane pane=new AnchorPane();
+		
 		getChildren().add(pane);
 		canvas = new Canvas();
 		pane.getChildren().add(canvas);
@@ -29,7 +42,8 @@ public class FPGraphics extends StackPane{
 		canvas.setLayoutY(200);
 		//canvas.setDisable(true);
 		this.griglia=griglia;
-		pane.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
+		//pane.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
+		pane.setBackground(new Background(new BackgroundImage(img,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 	}
 	
 	public void matrix() {
