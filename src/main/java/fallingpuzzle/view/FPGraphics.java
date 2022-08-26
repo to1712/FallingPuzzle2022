@@ -40,13 +40,18 @@ public class FPGraphics extends StackPane{
 		pane.setBackground(new Background(new BackgroundImage(img,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 		//canvas.widthProperty().bind(this.widthProperty());
 		//canvas.heightProperty().bind(this.heightProperty());
-		
+		/*
+		 * settaggi del canvas
+		 * */
 		canvas.setWidth(500);
 		canvas.setHeight(700);
 		canvas.setLayoutX(150);
 		canvas.setLayoutY(200);
 		
-		
+		/*
+		 * settage della cornice che circonda
+		 * la matrice sulla quale si svolge il gioco
+		 * */
 		Frame.setImage(frameImg);
 		Frame.setFitWidth(640);
 		Frame.setFitHeight(700);
