@@ -2,6 +2,7 @@ package fallingpuzzle.model;
 
 import java.util.Random;
 import java.util.Vector;
+import java.util.Objects;
 
 
 
@@ -15,7 +16,11 @@ public class Griglia {
 	private Mattoni [][] mattoni;
 	private Vector<Mattoni> mattone;
 	private Mattoni selezionato=null;
+	private boolean cade;  // boolean true se il mattone deve cadere false altrimenti
 	
+	
+	
+	//Stampa Il gioco
 	public Griglia() {
 		mattonMatrix= new Integer[WIDTH][HEIGHT];
 		backMatrix= new Integer[WIDTH][HEIGHT];
@@ -29,9 +34,12 @@ public class Griglia {
 			i++;
 		}
 		stampa();
-		
-		
 	}
+	
+	
+	
+	
+	//Genera una nuova riga  e tramite "saliRighe()" sale di una posizione la riga nella matrice
 	public void generationRiga() {
 		this.saliRighe();
 		int size=0; 
@@ -129,6 +137,29 @@ public class Griglia {
 			}
 		}
 		return b;
+	}
+	
+	public void caduta() {
+		setBackMatrix();
+		for(int i=this.mattone.size()-1; i>=0; i--) {
+			Mattoni m=mattone.get(i);
+			if((m.getHigh()+1)<10 & !e_sovrapposto(m.getTipo(), m.getWidth(), m.getHigh()+1)) {
+				m.setHigh(m.getHigh()+11);
+			}
+			aggiornaGriglia();
+		}
+		//if()
+	}
+	
+	public boolean matrixUguali() {
+		for(int i=0; i<HEIGHT; i++ ) {
+			for(int j=0; j<WIDTH; j++) {
+				if(!Object.equals(mattonMatrix[j][i],backMatrix[j][i])) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 	
 	
