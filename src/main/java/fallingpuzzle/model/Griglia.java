@@ -1,12 +1,10 @@
 package fallingpuzzle.model;
 
-import java.security.KeyStore.PrivateKeyEntry;
 import java.util.Random;
 import java.util.Vector;
 
-import javax.print.event.PrintJobAttributeEvent;
 
-import org.graalvm.compiler.lir.amd64.AMD64MathSinOp;
+
 
 public class Griglia {
 	
@@ -25,7 +23,11 @@ public class Griglia {
 		resetMattonMatrix();
 		mattone=new Vector<Mattoni>();
 		aggiornaGriglia();
-		generationRiga();
+		int i=0;
+		while(i<3) {
+			generationRiga();
+			i++;
+		}
 		stampa();
 		
 		
@@ -63,7 +65,7 @@ public class Griglia {
 	
 	private void saliRighe() {
 		for(Mattoni m: this.mattone) {
-			m.setWidth(m.getWidth()-1);
+			m.setHigh(m.getHigh()-1);
 		}
 		this.aggiornaGriglia();
 	}
@@ -110,8 +112,9 @@ public class Griglia {
 	public void stampa() {
 		for(int i=0; i<HEIGHT; i++  ) {
 			for(int j=0; j<WIDTH; j++) {
-				System.out.println(mattonMatrix[j][i]);
+				System.out.print(mattonMatrix[j][i]);
 			}
+			System.out.print("\n");
 		}
 	}
 	
