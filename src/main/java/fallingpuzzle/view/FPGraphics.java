@@ -63,7 +63,9 @@ public class FPGraphics extends StackPane{
 		
 		
 	}
-	
+	public void aggiorna() {
+		
+	}
 	public void matrix() {
 		canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		for(int i=0; i<this.griglia.WIDTH; i++) {

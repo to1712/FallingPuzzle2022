@@ -31,12 +31,13 @@ public class Griglia {
 		int i=0;
 		while(i<3) {
 			generationRiga();
+			stampa();
+			System.out.println("matrice"+i);
+			caduta();
 			i++;
 		}
 		stampa();
 	}
-	
-	
 	
 	
 	//Genera una nuova riga  e tramite "saliRighe()" sale di una posizione la riga nella matrice
@@ -143,18 +144,20 @@ public class Griglia {
 		setBackMatrix();
 		for(int i=this.mattone.size()-1; i>=0; i--) {
 			Mattoni m=mattone.get(i);
-			if((m.getHigh()+1)<10 & !e_sovrapposto(m.getTipo(), m.getWidth(), m.getHigh()+1)) {
-				m.setHigh(m.getHigh()+11);
+			if((m.getHigh()+1)<12 && !e_sovrapposto(m.getTipo(), m.getWidth(), m.getHigh()+1)) {
+				m.setHigh(m.getHigh()+1);
 			}
 			aggiornaGriglia();
 		}
-		//if()
+		if(matrixUguali()) {
+			cade=false;
+		}
 	}
 	
 	public boolean matrixUguali() {
 		for(int i=0; i<HEIGHT; i++ ) {
 			for(int j=0; j<WIDTH; j++) {
-				if(!Object.equals(mattonMatrix[j][i],backMatrix[j][i])) {
+				if(mattonMatrix[j][i]!=backMatrix[j][i]) {
 					return false;
 				}
 			}

@@ -1,23 +1,23 @@
 package fallingpuzzle.model;
 
 public class Mattoni {
-	public static final int ONE=1;
-	public static final int TWO=2;
-	public static final int TREE=3;
-	public static final int FOUR=4;
+	public static final Integer ONE=1;
+	public static final Integer TWO=2;
+	public static final Integer TREE=3;
+	public static final Integer FOUR=4;
 	private int mattHigh;
 	private int mattWidth;
 	private boolean selezionato=false;
 	
 	private int tipo;
 	
-	public Mattoni(int tipo,int mattWidth,int mattHigh) {
+	public Mattoni(Integer tipo,Integer mattWidth,Integer mattHigh) {
 		this.tipo=tipo;
 		this.mattHigh=mattHigh;
 		this.mattWidth=mattWidth;
 	}
 	
-	public void setTipo(int tipo) {
+	public void setTipo(Integer tipo) {
 		this.tipo=tipo;
 	}
 	
@@ -25,7 +25,7 @@ public class Mattoni {
 		return tipo;
 	}
 	
-	public void setWidth(int mattWidth) {
+	public void setWidth(Integer mattWidth) {
 		this.mattWidth=mattWidth;
 	}
 	
@@ -33,7 +33,7 @@ public class Mattoni {
 		return mattWidth;
 	}
 	
-	public void setHigh(int mattHigh) {
+	public void setHigh(Integer mattHigh) {
 		this.mattHigh=mattHigh;
 	}
 	
