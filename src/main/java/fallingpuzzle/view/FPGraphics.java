@@ -10,6 +10,7 @@ import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -24,26 +25,38 @@ public class FPGraphics extends StackPane{
 	private final int DIM=50;
 	private Canvas canvas;	
 	private Griglia griglia=null;
-	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));;
+	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
+	private Image frameImg = new Image(getClass().getResourceAsStream("/images/CornicePlay.png"));
+	private ImageView Frame = new ImageView();
 	
 	public FPGraphics(Griglia griglia){
 		AnchorPane pane=new AnchorPane();
-		
 		getChildren().add(pane);
 		canvas = new Canvas();
 		pane.getChildren().add(canvas);
 		pane.setPrefHeight(900);
 		pane.setPrefWidth(700);
+		//pane.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
+		pane.setBackground(new Background(new BackgroundImage(img,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 		//canvas.widthProperty().bind(this.widthProperty());
 		//canvas.heightProperty().bind(this.heightProperty());
+		
 		canvas.setWidth(500);
 		canvas.setHeight(700);
 		canvas.setLayoutX(150);
 		canvas.setLayoutY(200);
+		
+		
+		Frame.setImage(frameImg);
+		Frame.setFitWidth(640);
+		Frame.setFitHeight(700);
+		Frame.setLayoutX(-30);
+		Frame.setLayoutY(150);
+		pane.getChildren().add(Frame);
 		//canvas.setDisable(true);
 		this.griglia=griglia;
-		//pane.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
-		pane.setBackground(new Background(new BackgroundImage(img,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+		
+		
 	}
 	
 	public void matrix() {
