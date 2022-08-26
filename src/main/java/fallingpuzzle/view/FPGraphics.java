@@ -53,7 +53,7 @@ public class FPGraphics extends StackPane{
 		 * la matrice sulla quale si svolge il gioco
 		 * */
 		Frame.setImage(frameImg);
-		Frame.setFitWidth(640);
+		Frame.setFitWidth(638);
 		Frame.setFitHeight(700);
 		Frame.setLayoutX(-30);
 		Frame.setLayoutY(150);
