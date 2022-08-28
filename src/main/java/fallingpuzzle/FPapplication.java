@@ -1,6 +1,6 @@
 package fallingpuzzle;
 
-import fallingpuzzle.controller.FPMainController;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +16,8 @@ public class FPapplication extends Application {
 			Scene home= new Scene(root);
 			primaryStage.setScene(home);
 			primaryStage.show();
-		}catch (Exception e) {
+		}
+		catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

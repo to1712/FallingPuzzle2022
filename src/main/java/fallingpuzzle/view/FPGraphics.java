@@ -2,9 +2,7 @@ package fallingpuzzle.view;
 
 
 
-import java.io.File;
 
-import javax.imageio.ImageIO;
 
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
@@ -13,7 +11,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
@@ -30,6 +27,8 @@ public class FPGraphics extends StackPane{
 	private ImageView Frame = new ImageView();
 	
 	public FPGraphics(Griglia griglia){
+		super();
+		//this.griglia=griglia;
 		AnchorPane pane=new AnchorPane();
 		getChildren().add(pane);
 		canvas = new Canvas();
@@ -60,12 +59,8 @@ public class FPGraphics extends StackPane{
 		pane.getChildren().add(Frame);
 		//canvas.setDisable(true);
 		this.griglia=griglia;
-		
-		
 	}
-	public void aggiorna() {
-		
-	}
+	
 	public void matrix() {
 		canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 		for(int i=0; i<this.griglia.WIDTH; i++) {
@@ -102,8 +97,12 @@ public class FPGraphics extends StackPane{
 				canvas.getGraphicsContext2D().setFill(Color.BLACK);
 				canvas.getGraphicsContext2D().strokeRect(m.getWidth()*DIM, m.getHigh()*DIM, m.getTipo()*DIM, DIM);
 			}
-		}
-		
-		
+		}	
 	}
+	
+	public Griglia getGriglia() {
+		return griglia;
+	}
+	
+	
 }

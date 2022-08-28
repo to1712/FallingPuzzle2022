@@ -2,6 +2,7 @@ package fallingpuzzle.controller;
 
 import java.io.IOException;
 
+import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.view.FPGraphics;
 import javafx.event.ActionEvent;
@@ -20,13 +21,13 @@ public class FPMainController {
 	private Scene scene;
 	
 	public void goToPlay(ActionEvent event) throws IOException {
-		Griglia g=new Griglia();
-		FPGraphics graphics=new FPGraphics(g);
+		Griglia griglia=new Griglia();
+		FPGraphics graphics=new FPGraphics(griglia);
+		FPGame game=new FPGame(griglia,graphics);
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);
 		stage.setScene(scene);
 		stage.show();
-		graphics.matrix();
 	}
 	 @FXML
 	    void exitGame(ActionEvent event) {

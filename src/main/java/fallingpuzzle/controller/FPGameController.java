@@ -12,7 +12,6 @@ import javafx.scene.Node;
 
 public class FPGameController {
 	private Griglia g;
-	private static FPGameController instance=null;
 	
 	
 	public FPGameController() {

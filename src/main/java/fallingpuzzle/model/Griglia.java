@@ -1,13 +1,14 @@
 package fallingpuzzle.model;
 
 import java.util.Random;
+import java.util.Timer;
 import java.util.Vector;
-import java.util.Objects;
 
 
 
 
 public class Griglia {
+	
 	
 	public final int WIDTH=8;
 	public final int HEIGHT=12;
@@ -17,6 +18,7 @@ public class Griglia {
 	private Vector<Mattoni> mattone;
 	private Mattoni selezionato=null;
 	private boolean cade;  // boolean true se il mattone deve cadere false altrimenti
+	private Timer cades;
 	
 	
 	
@@ -31,14 +33,9 @@ public class Griglia {
 		int i=0;
 		while(i<3) {
 			generationRiga();
-			stampa();
-			System.out.println("matrice"+i);
-			caduta();
 			i++;
 		}
-		stampa();
 	}
-	
 	
 	//Genera una nuova riga  e tramite "saliRighe()" sale di una posizione la riga nella matrice
 	public void generationRiga() {
