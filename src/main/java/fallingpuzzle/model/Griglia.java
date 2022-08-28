@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.Vector;
 
+import com.sun.tools.sjavac.comp.dependencies.PublicApiCollector;
+
 
 
 
@@ -18,7 +20,7 @@ public class Griglia {
 	private Vector<Mattoni> mattone;
 	private Mattoni selezionato=null;
 	private boolean cade;  // boolean true se il mattone deve cadere false altrimenti
-	private Timer cades;
+	private int moltiplicatore=1;
 	
 	
 	
@@ -162,6 +164,41 @@ public class Griglia {
 		return true;
 	}
 	
+	public boolean staCadendo() {
+		return cade;
+	}
+	
+	public void deveCadere(boolean c) {
+		this.cade=c;
+	}
+	
+	public int rigaPiena() {
+		int punti=0;
+		for(int x=HEIGHT-1; x>=0; x--) {
+			int cont=0;
+			//boolean 
+			//int 
+			for(int y=WIDTH-1; y>=0; y--) {
+				if(mattonMatrix[y][x]!=0) {
+					cont++;
+				}
+			}
+			if(cont>=8) {
+				for(int i=WIDTH-1; i>=0; i++) {
+					setMattoneSelezionato(i, x);
+					mattonMatrix[i][x]=0;
+					mattoni[i][x]=null;
+					if(selezionato!=null) {
+						mattone.remove(selezionato);
+					}
+				}
+				punti+=16*moltiplicatore;
+				moltiplicatore+=1;
+				aggiornaGriglia();
+			}	
+		}
+		return punti;
+	}
 	
 	
 	
