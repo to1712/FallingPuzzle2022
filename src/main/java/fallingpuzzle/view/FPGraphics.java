@@ -4,9 +4,12 @@ package fallingpuzzle.view;
 
 
 
+import fallingpuzzle.controller.FPGameController;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
+import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -24,7 +27,16 @@ public class FPGraphics extends StackPane{
 	private Griglia griglia=null;
 	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
 	private Image frameImg = new Image(getClass().getResourceAsStream("/images/CornicePlay.png"));
+	private Image pausaButtonFrame = new Image(getClass().getResourceAsStream("/images/pausaButton.png"));
+	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
 	private ImageView Frame = new ImageView();
+	public Button pausaButton;
+	private FPGameController controller; 
+	
+	
+	public FPGraphics() {
+		
+	}
 	
 	public FPGraphics(Griglia griglia){
 		super();
@@ -42,6 +54,24 @@ public class FPGraphics extends StackPane{
 		/*
 		 * settaggi del canvas
 		 * */
+		
+		pausaFrame.setFitHeight(65);
+		pausaFrame.setFitWidth(65);
+		pausaButton = new Button();
+		
+		/*pausaFrame.fitWidthProperty().bind(pausaButton.widthProperty());
+		pausaFrame.fitHeightProperty().bind(pausaButton.heightProperty());*/
+		//pausaFrame.setPreserveRatio(true);
+		//pausaButton.setPrefSize(10, 10);
+		pausaButton.setPrefHeight(65);
+		pausaButton.setPrefWidth(65);
+		pausaButton.setGraphic(pausaFrame);
+		pausaButton.setBackground(null);
+		pausaButton.setTranslateX(575);
+		pausaButton.setTranslateY(20);
+		
+		pane.getChildren().add(pausaButton);
+		
 		canvas.setWidth(500);
 		canvas.setHeight(700);
 		canvas.setLayoutX(150);
@@ -100,9 +130,10 @@ public class FPGraphics extends StackPane{
 		}	
 	}
 	
-	public Griglia getGriglia() {
-		return griglia;
-	}
 	
+	public void setController(FPGameController controller) {
+		this.controller= controller;
+	}
+
 	
 }
