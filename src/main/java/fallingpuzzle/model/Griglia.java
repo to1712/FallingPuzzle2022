@@ -184,7 +184,7 @@ public class Griglia {
 				}
 			}
 			if(cont>=8) {
-				for(int i=WIDTH-1; i>=0; i++) {
+				for(int i=WIDTH-1; i>=0; i--) {
 					setMattoneSelezionato(i, x);
 					mattonMatrix[i][x]=0;
 					mattoni[i][x]=null;
@@ -198,6 +198,10 @@ public class Griglia {
 			}	
 		}
 		return punti;
+	}
+	
+	public void resettaMoltiplicatore() {
+		this.moltiplicatore=1;
 	}
 	
 	
