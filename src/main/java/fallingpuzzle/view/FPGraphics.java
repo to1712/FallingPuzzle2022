@@ -4,10 +4,13 @@ package fallingpuzzle.view;
 
 
 
+
+
 import fallingpuzzle.controller.FPGameController;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -18,6 +21,7 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
@@ -31,17 +35,14 @@ public class FPGraphics extends StackPane{
 	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
 	private ImageView Frame = new ImageView();
 	public Button pausaButton;
-	private FPGameController controller; 
+	private AnchorPane pane=null;
+	private FPGameController controller;
 	
-	
-	public FPGraphics() {
-		
-	}
 	
 	public FPGraphics(Griglia griglia){
 		super();
 		//this.griglia=griglia;
-		AnchorPane pane=new AnchorPane();
+		pane=new AnchorPane();
 		getChildren().add(pane);
 		canvas = new Canvas();
 		pane.getChildren().add(canvas);
@@ -129,11 +130,7 @@ public class FPGraphics extends StackPane{
 			}
 		}	
 	}
-	
-	
-	public void setController(FPGameController controller) {
-		this.controller= controller;
-	}
+}
 
 	
-}
+
