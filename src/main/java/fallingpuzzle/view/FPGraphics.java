@@ -3,9 +3,6 @@ package fallingpuzzle.view;
 
 
 
-
-
-
 import fallingpuzzle.controller.FPGameController;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;

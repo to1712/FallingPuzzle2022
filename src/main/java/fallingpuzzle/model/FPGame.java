@@ -37,7 +37,6 @@ public class FPGame {
 						cont++;
 					}
 				});
-				
 			}
 		};
 		cades.schedule(task,0,500);
