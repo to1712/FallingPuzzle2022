@@ -2,6 +2,7 @@ package fallingpuzzle.controller;
 
 import java.io.IOException;
 
+import fallingpuzzle.controller.mattoni.MouseController;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.view.FPGraphics;
@@ -27,6 +28,7 @@ public class FPMainController extends Application {
 		FPGraphics graphics=new FPGraphics(griglia);
 		FPGame game=new FPGame(griglia,graphics);
 		FPGameController controller=new FPGameController(graphics);
+		MouseController mouseController=new MouseController(griglia,graphics);
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);
 		stage.setScene(scene);

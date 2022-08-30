@@ -3,11 +3,9 @@ package fallingpuzzle.view;
 
 
 
-import fallingpuzzle.controller.FPGameController;
+
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -18,13 +16,12 @@ import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 public class FPGraphics extends StackPane{
 	private final int DIM=50;
-	private Canvas canvas;	
+	public Canvas canvas;	
 	private Griglia griglia=null;
 	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
 	private Image frameImg = new Image(getClass().getResourceAsStream("/images/CornicePlay.png"));
@@ -33,7 +30,6 @@ public class FPGraphics extends StackPane{
 	private ImageView Frame = new ImageView();
 	public Button pausaButton;
 	private AnchorPane pane=null;
-	private FPGameController controller;
 	
 	
 	public FPGraphics(Griglia griglia){

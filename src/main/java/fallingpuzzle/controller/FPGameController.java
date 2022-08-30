@@ -26,8 +26,8 @@ public class FPGameController  {
 				scale.setDuration(Duration.millis(500));
 				scale.setCycleCount(2);
 				scale.setInterpolator(Interpolator.LINEAR);
-				scale.setByX(0.5);
-				scale.setByY(0.5);
+				scale.setByX(0.3);
+				scale.setByY(0.3);
 				scale.setAutoReverse(true);
 				scale.play();
 			}
