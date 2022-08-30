@@ -28,7 +28,7 @@ public class FPMainController extends Application {
 		FPGraphics graphics=new FPGraphics(griglia);
 		FPGame game=new FPGame(griglia,graphics);
 		FPGameController controller=new FPGameController(graphics);
-		MouseController mouseController=new MouseController(griglia,graphics);
+		MouseController mouseController=new MouseController(griglia,graphics,game);
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);
 		stage.setScene(scene);

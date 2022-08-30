@@ -17,7 +17,7 @@ public class Griglia {
 	
 	public final int WIDTH=8;
 	public final int HEIGHT=12;
-	private Integer[][] mattonMatrix;
+	public Integer[][] mattonMatrix;
 	private Integer[][] backMatrix;
 	private Mattoni [][] mattoni;
 	private Vector<Mattoni> mattone;

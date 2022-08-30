@@ -6,15 +6,26 @@ import java.util.TimerTask;
 
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Platform;
+import jdk.internal.org.jline.reader.impl.history.DefaultHistory;
+
 
 public class FPGame {
 
+	
+	private static FPGame instance = null;
 	private Timer caduta;
 	private TimerTask task;
 	private FPGraphics graphics=null;
 	private int punti=0;
 	private Griglia griglia=null;
 	private int cont=0;
+	
+	
+	
+	
+	
+	
+	
 	
 	public FPGame(final Griglia g,final FPGraphics graphics) {
 		this.graphics=graphics;
@@ -41,6 +52,15 @@ public class FPGame {
 		};
 		cades.schedule(task,0,500);
 	}
+	
+	
+	
+	
+	
+	
+	public void mattoneSelezionato(int x, int y){
+        this.griglia.setMattoneSelezionato(x, y);
+    }
 	
 	
 	private void setGravity() {

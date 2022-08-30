@@ -113,6 +113,7 @@ public class FPGraphics extends StackPane{
 			}
 			canvas.getGraphicsContext2D().fillRect(m.getWidth() * DIM, m.getHigh() * DIM, DIM * m.getTipo(), DIM);
 			
+			
 			if(m.eSelezionato()) {
 				canvas.getGraphicsContext2D().setFill(Color.YELLOW);
 				canvas.getGraphicsContext2D().strokeRect(m.getWidth()*DIM, m.getHigh()*DIM, m.getTipo()*DIM, DIM);
