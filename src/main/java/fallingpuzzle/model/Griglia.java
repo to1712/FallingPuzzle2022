@@ -206,6 +206,14 @@ public class Griglia {
 	public void resettaMoltiplicatore() {
 		this.moltiplicatore=1;
 	}
+	
+	public Mattoni[][] getMattoni(){
+		return mattoni;
+	}
+	
+	public Integer[][] getMattonMatrix(){
+		return mattonMatrix;
+	}
 
 	
 

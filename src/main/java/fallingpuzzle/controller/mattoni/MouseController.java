@@ -13,13 +13,15 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
-public class MouseController   {
+public class MouseController     {
 
 	Color c=new Color(0, 0, 1, 1.0);
 	private final int DIM=50;
 	private Griglia griglia=null;
 	private FPGraphics graphics;
 	private FPGame game;
+	private int x,y=0;
+	
 	public MouseController(Griglia griglia, FPGraphics graphics,FPGame game) {
 		this.griglia=griglia;
 		this.graphics=graphics;
@@ -31,10 +33,33 @@ public class MouseController   {
 	public void selezionaMattone() {
 		graphics.canvas.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent e) {
-				int x=((int) e.getX()/50)%12;
-				int y=((int) e.getY()/50)%12;
-				game.mattoneSelezionato(x, y);
+				//x=((int) e.getX()/50)%12;
+				//y=((int) e.getY()/50)%12;
 			}
+		});
+		graphics.canvas.setOnMousePressed(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent e) {
+				x=((int) e.getX()/50)%12;
+				y=((int) e.getY()/50)%12;
+			}
+		});
+		
+		graphics.canvas.setOnMouseDragged(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent e) {
+					int w=((int) e.getX()/50)%12;
+					System.out.println(x+" "+y);
+					if(w>x) {
+						System.out.println("muovo a destra");
+						game.muovi(x, y, true);
+					}
+					if(w<x) {
+						System.out.println("muovo a sinistra");
+						game.muovi(x, y, false);
+					}
+			}
+			
 		});
 	}
 }
