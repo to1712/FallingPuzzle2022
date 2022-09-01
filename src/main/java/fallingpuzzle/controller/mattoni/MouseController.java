@@ -31,10 +31,11 @@ public class MouseController     {
 	
 	
 	public void selezionaMattone() {
-		graphics.canvas.setOnMouseClicked(new EventHandler<MouseEvent>() {
+		graphics.canvas.setOnMouseReleased(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent e) {
 				//x=((int) e.getX()/50)%12;
 				//y=((int) e.getY()/50)%12;
+				game.mouseRilasciato();
 			}
 		});
 		graphics.canvas.setOnMousePressed(new EventHandler<MouseEvent>() {

@@ -19,6 +19,7 @@ public class FPGame {
 	private int punti=0;
 	private Griglia griglia=null;
 	private int cont=0;
+	private boolean rilasciato=false;
 	
 	
 	
@@ -56,6 +57,9 @@ public class FPGame {
         this.griglia.setMattoneSelezionato(x, y);
     }
 	
+	public void mouseRilasciato() {
+		rilasciato=true;
+	}
 	
 	private void setGravity() {
 		griglia.deveCadere(true);
@@ -76,6 +80,8 @@ public class FPGame {
 	public void muovi(int x,int y,boolean d_s) {
 		Mattoni mattoneSelezionato=griglia.getMattoni()[x][y];
 		boolean muove=false;
+		rilasciato=false;
+		System.out.println("we");
 		//System.out.print(x + " " + y +" -> ");System.out.println(mattoneSelezionato.getTipo());
 		
 		if(mattoneSelezionato!=null) {
@@ -103,30 +109,7 @@ public class FPGame {
 					}
 					break;
 				}
-				default:
-					break;
-				}
-				
-				
-				/*if(mattoneSelezionato.getWidth()<7 && muove==false) {
-					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+1][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+1][mattoneSelezionato.getHigh()]==null ) {
-						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
-						muove=true;
-						griglia.aggiornaGriglia();
-						graphics.matrix();
-						griglia.caduta();
-					}
-				}
-				if(mattoneSelezionato.getWidth()<6 && muove==false) {
-					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+2][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+2][mattoneSelezionato.getHigh()]==null ) {
-						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
-						muove=true;
-						griglia.aggiornaGriglia();
-						graphics.matrix();
-						griglia.caduta();
-					}
-				}
-				if(mattoneSelezionato.getWidth()<5 && muove==false) {
+				case 3:{
 					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+3][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+3][mattoneSelezionato.getHigh()]==null ) {
 						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
 						muove=true;
@@ -134,8 +117,11 @@ public class FPGame {
 						graphics.matrix();
 						griglia.caduta();
 					}
+					break;
 				}
-				*/
+				default:
+					break;
+				}
 			}
 			else {
 				if(mattoneSelezionato.getWidth()>0 ) {
@@ -147,7 +133,7 @@ public class FPGame {
 					}
 				}
 			}
-			if(muove)
+			if(rilasciato)
 				griglia.generationRiga();
 		}
 	}
