@@ -4,6 +4,8 @@ import java.awt.Container;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import org.graalvm.compiler.phases.common.DeadCodeEliminationPhase;
+
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Platform;
 import jdk.internal.org.jline.reader.impl.history.DefaultHistory;
@@ -20,6 +22,7 @@ public class FPGame {
 	private Griglia griglia=null;
 	private int cont=0;
 	private boolean rilasciato=false;
+	private boolean muove=false;
 	
 	
 	
@@ -43,6 +46,7 @@ public class FPGame {
 							graphics.matrix();
 							g.caduta();
 							setGravity();
+							resetGame();
 						}
 						cont++;
 					}
@@ -57,8 +61,11 @@ public class FPGame {
         this.griglia.setMattoneSelezionato(x, y);
     }
 	
-	public void mouseRilasciato() {
-		rilasciato=true;
+	public void mouseRilasciato(boolean rilasciato) {
+		this.rilasciato=rilasciato;
+		if(rilasciato && muove) {
+			griglia.generationRiga();
+		}
 	}
 	
 	private void setGravity() {
@@ -79,19 +86,16 @@ public class FPGame {
 	}
 	public void muovi(int x,int y,boolean d_s) {
 		Mattoni mattoneSelezionato=griglia.getMattoni()[x][y];
-		boolean muove=false;
-		rilasciato=false;
-		System.out.println("we");
-		//System.out.print(x + " " + y +" -> ");System.out.println(mattoneSelezionato.getTipo());
-		
+		muove=false;
 		if(mattoneSelezionato!=null) {
 			//Movimento a destra true
 			if(d_s==true) {
 				
 				switch (mattoneSelezionato.getTipo()) {
 				case 1:{
-					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+1][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+1][mattoneSelezionato.getHigh()]==null ) {
+					if(mattoneSelezionato.getWidth()<7 && griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+1][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+1][mattoneSelezionato.getHigh()]==null ) {
 						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
+						//System.out.println("1");
 						muove=true;
 						griglia.aggiornaGriglia();
 						graphics.matrix();
@@ -100,7 +104,7 @@ public class FPGame {
 					break;
 				}
 				case 2:{
-					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+2][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+2][mattoneSelezionato.getHigh()]==null ) {
+					if(mattoneSelezionato.getWidth()<6 &&griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+2][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+2][mattoneSelezionato.getHigh()]==null ) {
 						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
 						muove=true;
 						griglia.aggiornaGriglia();
@@ -110,7 +114,17 @@ public class FPGame {
 					break;
 				}
 				case 3:{
-					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+3][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+3][mattoneSelezionato.getHigh()]==null ) {
+					if(mattoneSelezionato.getWidth()<5 && griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+3][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+3][mattoneSelezionato.getHigh()]==null ) {
+						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
+						muove=true;
+						griglia.aggiornaGriglia();
+						graphics.matrix();
+						griglia.caduta();
+					}
+					break;
+				}
+				case 4:{
+					if(mattoneSelezionato.getWidth()<4 && griglia.getMattonMatrix()[mattoneSelezionato.getWidth()+4][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()+4][mattoneSelezionato.getHigh()]==null ) {
 						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()+1);
 						muove=true;
 						griglia.aggiornaGriglia();
@@ -127,15 +141,22 @@ public class FPGame {
 				if(mattoneSelezionato.getWidth()>0 ) {
 					if(griglia.getMattonMatrix()[mattoneSelezionato.getWidth()-1][mattoneSelezionato.getHigh()]==0 && griglia.getMattoni()[mattoneSelezionato.getWidth()-1][mattoneSelezionato.getHigh()]==null) {
 						mattoneSelezionato.setWidth(mattoneSelezionato.getWidth()-1);
+						muove=true;
 						griglia.aggiornaGriglia();
 						graphics.matrix();
 						griglia.caduta();
 					}
 				}
 			}
-			if(rilasciato)
-				griglia.generationRiga();
 		}
 	}
+	
+	public void resetGame() {
+		if(griglia.dead()==true) {
+			this.griglia=new Griglia();
+		}
+	}
+	
+	
 
 }

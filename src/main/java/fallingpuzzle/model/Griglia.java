@@ -110,6 +110,7 @@ public class Griglia {
 				mattoni[j][i]=null;
 			}
 		}
+		
 	}
 	
 	private void setBackMatrix() {
@@ -214,7 +215,16 @@ public class Griglia {
 	public Integer[][] getMattonMatrix(){
 		return mattonMatrix;
 	}
-
+	
+	
+	public boolean dead() {
+		for(int i=0; i<WIDTH; i++) {
+			if(mattonMatrix[i][0]!=0) {
+				return false;
+			}
+		}
+		return true;
+	}
 	
 
 	

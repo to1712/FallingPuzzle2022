@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class FPMainController extends Application {
+public class FPMainController  {
 	
 	 @FXML
 	 private AnchorPane home;
@@ -41,13 +41,12 @@ public class FPMainController extends Application {
 	    }
 	 
 	 public Griglia getGriglia() {
-		 return griglia;
+		 return this.griglia;
 	 }
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
+	 
+	 public void setGriglia(Griglia g) {
+		 this.griglia=g;
+	 }
+	 
 		
-	}
-	
-	
 }

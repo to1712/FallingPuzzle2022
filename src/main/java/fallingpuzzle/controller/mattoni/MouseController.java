@@ -2,6 +2,9 @@ package fallingpuzzle.controller.mattoni;
 
 
 
+
+
+import fallingpuzzle.Settings;
 import fallingpuzzle.controller.FPGameController;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
@@ -21,6 +24,7 @@ public class MouseController     {
 	private FPGraphics graphics;
 	private FPGame game;
 	private int x,y=0;
+	private Mattoni mattoneSelezionato;
 	
 	public MouseController(Griglia griglia, FPGraphics graphics,FPGame game) {
 		this.griglia=griglia;
@@ -31,18 +35,14 @@ public class MouseController     {
 	
 	
 	public void selezionaMattone() {
-		graphics.canvas.setOnMouseReleased(new EventHandler<MouseEvent>() {
-			public void handle(MouseEvent e) {
-				//x=((int) e.getX()/50)%12;
-				//y=((int) e.getY()/50)%12;
-				game.mouseRilasciato();
-			}
-		});
 		graphics.canvas.setOnMousePressed(new EventHandler<MouseEvent>() {
 
 			public void handle(MouseEvent e) {
-				x=((int) e.getX()/50)%12;
-				y=((int) e.getY()/50)%12;
+				x=((int) e.getX()/Settings.MATTONI_SIZE)%12;
+				y=((int) e.getY()/Settings.MATTONI_SIZE)%12;
+				mattoneSelezionato=griglia.getMattoni()[x][y];
+				if(mattoneSelezionato!=null)
+					mattoneSelezionato.setSelezionato(true);
 			}
 		});
 		
@@ -50,17 +50,27 @@ public class MouseController     {
 
 			public void handle(MouseEvent e) {
 					int w=((int) e.getX()/50)%12;
-					System.out.println(x+" "+y);
-					if(w>x) {
-						System.out.println("muovo a destra");
+					if(w>x && x<8 && (w>0 && w<8)) {
+						//System.out.println("muovo a destra");
 						game.muovi(x, y, true);
+						x+=1;
+						
 					}
-					if(w<x) {
-						System.out.println("muovo a sinistra");
+					if(w<x && x>0 && x<8) {
+						//System.out.println("muovo a sinistra");
 						game.muovi(x, y, false);
+						x-=1;
 					}
 			}
 			
+		});
+		graphics.canvas.setOnMouseReleased(new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent e) {
+				System.out.println("Rilascio");
+				if(mattoneSelezionato!=null)
+					mattoneSelezionato.setSelezionato(false);
+				game.mouseRilasciato(true);
+			}
 		});
 	}
 }
