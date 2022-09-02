@@ -34,7 +34,7 @@ public class FPGraphics extends StackPane{
 	
 	public FPGraphics(Griglia griglia){
 		super();
-		//this.griglia=griglia;
+		this.griglia=griglia;
 		pane=new AnchorPane();
 		getChildren().add(pane);
 		canvas = new Canvas();
@@ -82,7 +82,6 @@ public class FPGraphics extends StackPane{
 		Frame.setLayoutY(150);
 		pane.getChildren().add(Frame);
 		//canvas.setDisable(true);
-		this.griglia=griglia;
 	}
 	
 	public void matrix() {
@@ -123,6 +122,13 @@ public class FPGraphics extends StackPane{
 				canvas.getGraphicsContext2D().strokeRect(m.getWidth()*DIM, m.getHigh()*DIM, DIM * m.getTipo(), DIM);
 			}
 		}	
+	}
+	
+	public void resetGame() {
+		if(griglia.dead()==false) {
+			this.griglia=new Griglia();
+		}
+		griglia.aggiornaGriglia();
 	}
 }
 
