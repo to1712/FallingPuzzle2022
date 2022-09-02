@@ -40,13 +40,18 @@ public class FPGame {
 					public void run() {
 						if(cont==0) {
 							graphics.matrix();
-							g.caduta();
+							//g.caduta();
+							graphics.resetGame();
 						}
 						else {
 							graphics.matrix();
-							g.caduta();
+							//g.caduta();
 							setGravity();
+<<<<<<< HEAD
+							graphics.resetGame();
+=======
 						//	resetGame();
+>>>>>>> f8ae3d0c93ffc0cca1d50f8cb9da227487bd2341
 						}
 						cont++;
 					}
@@ -151,11 +156,6 @@ public class FPGame {
 		}
 	}
 	
-	public void resetGame() {
-		if(griglia.dead()==true) {
-			this.griglia=new Griglia();
-		}
-	}
 	
 	
 

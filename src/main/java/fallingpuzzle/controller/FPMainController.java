@@ -40,13 +40,5 @@ public class FPMainController  {
 		 	System.exit(0);
 	    }
 	 
-	 public Griglia getGriglia() {
-		 return this.griglia;
-	 }
-	 
-	 public void setGriglia(Griglia g) {
-		 this.griglia=g;
-	 }
-	 
 		
 }
