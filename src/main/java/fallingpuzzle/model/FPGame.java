@@ -1,14 +1,14 @@
 package fallingpuzzle.model;
 
-import java.awt.Container;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.graalvm.compiler.phases.common.DeadCodeEliminationPhase;
+
 
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Platform;
-import jdk.internal.org.jline.reader.impl.history.DefaultHistory;
+
 
 
 public class FPGame {
@@ -47,7 +47,11 @@ public class FPGame {
 							graphics.matrix();
 							//g.caduta();
 							setGravity();
+<<<<<<< HEAD
 							graphics.resetGame();
+=======
+						//	resetGame();
+>>>>>>> f8ae3d0c93ffc0cca1d50f8cb9da227487bd2341
 						}
 						cont++;
 					}

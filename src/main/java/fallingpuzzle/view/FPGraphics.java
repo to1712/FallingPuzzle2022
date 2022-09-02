@@ -6,6 +6,7 @@ package fallingpuzzle.view;
 
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
+import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -20,14 +21,29 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 public class FPGraphics extends StackPane{
+	
+
+    @FXML
+    private Button exitButton;
+
+    @FXML
+    private Button homeButton;
+
+    @FXML
+    private AnchorPane pausaPane;
+
+	
+	
 	private final int DIM=50;
 	public Canvas canvas;	
 	private Griglia griglia=null;
 	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
-	private Image frameImg = new Image(getClass().getResourceAsStream("/images/CornicePlay.png"));
+	private Image frameImg = new Image(getClass().getResourceAsStream("/images/Frame.png"));
 	private Image pausaButtonFrame = new Image(getClass().getResourceAsStream("/images/pausaButton.png"));
+	private Image gameFrame = new Image(getClass().getResourceAsStream("/images/gameFrame.png"));
 	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
 	private ImageView Frame = new ImageView();
+	private ImageView Frame2 = new ImageView();
 	public Button pausaButton;
 	private AnchorPane pane=null;
 	
@@ -49,6 +65,32 @@ public class FPGraphics extends StackPane{
 		 * settaggi del canvas
 		 * */
 		
+		
+		
+		canvas.setWidth(500);
+		canvas.setHeight(700);
+		canvas.setLayoutX(150);
+		canvas.setLayoutY(200);
+		
+		/*
+		 * settage della cornice che circonda
+		 * la matrice sulla quale si svolge il gioco
+		 * 
+		 * */
+		
+		Frame2.setImage(gameFrame);
+		Frame2.setFitWidth(700);
+		Frame2.setFitHeight(900);		
+		
+		
+		Frame.setImage(frameImg);
+		Frame.setFitWidth(570);
+		Frame.setFitHeight(770);
+		Frame.setLayoutX(60);
+		Frame.setLayoutY(115);
+		pane.getChildren().add(Frame);
+		pane.getChildren().add(Frame2);
+		
 		pausaFrame.setFitHeight(65);
 		pausaFrame.setFitWidth(65);
 		pausaButton = new Button();
@@ -65,22 +107,7 @@ public class FPGraphics extends StackPane{
 		pausaButton.setTranslateY(20);
 		
 		pane.getChildren().add(pausaButton);
-		
-		canvas.setWidth(500);
-		canvas.setHeight(700);
-		canvas.setLayoutX(150);
-		canvas.setLayoutY(200);
-		
-		/*
-		 * settage della cornice che circonda
-		 * la matrice sulla quale si svolge il gioco
-		 * */
-		Frame.setImage(frameImg);
-		Frame.setFitWidth(638);
-		Frame.setFitHeight(700);
-		Frame.setLayoutX(-30);
-		Frame.setLayoutY(150);
-		pane.getChildren().add(Frame);
+		pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
 	}
 	
