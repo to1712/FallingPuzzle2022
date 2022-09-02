@@ -34,7 +34,7 @@ public class FPGameController  {
 			});
 		graphics.pausaButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
-				System.out.println("WE");
+				System.out.println("aru q");
 			}
 		});
 
