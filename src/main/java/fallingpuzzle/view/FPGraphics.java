@@ -46,12 +46,14 @@ public class FPGraphics extends StackPane{
 	private Image exitButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseExitButton_preview_rev_1.png"));
 	private Image homeButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseHomeButton_preview_rev_1.png"));
 	
+	
 	private ImageView pm = new ImageView(pausaMenu);
 	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
 	private ImageView Frame = new ImageView();
 	private ImageView Frame2 = new ImageView();
 	private ImageView exitFrame = new ImageView(exitButtonFrame);
 	private ImageView homeFrame = new ImageView(homeButtonFrame);
+	
 	
 	public Button pausaButton;
 	public Button exitButton;
@@ -221,7 +223,18 @@ public class FPGraphics extends StackPane{
 			public void handle(MouseEvent event) {
 				// TODO Auto-generated method stub
 				System.out.println("Torniamo alla home?");
-			
+				Parent part;
+				try {
+					part = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
+					Stage stage = new Stage();
+		        Scene scene = new Scene(part);
+		        stage.setScene(scene);
+		        stage.show();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        
 	            
 			}
 			
