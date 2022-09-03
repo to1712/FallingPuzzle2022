@@ -16,18 +16,7 @@ import javafx.util.Duration;
 
 public class FPGameController  {
 	
-    @FXML
-    private Button exitButton;
 
-    @FXML
-    private Button homeButton;
-
-    @FXML
-    private AnchorPane pausapane;
-    
-    private static AnchorPane pp1;
-
-	
 	private FPGraphics graphics;
 	
 	public FPGameController(FPGraphics graphics) {
@@ -35,11 +24,7 @@ public class FPGameController  {
 		controller();
 	}
 	
-	@FXML
-	public void initialize() {
-		System.out.println("sono dentro initialize()");
-		pp1 = pausapane;
-	}
+	
 	
 	public void controller() {
 		final ScaleTransition scale=new ScaleTransition();

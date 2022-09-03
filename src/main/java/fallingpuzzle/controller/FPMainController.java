@@ -19,8 +19,11 @@ public class FPMainController  {
 	 @FXML
 	 private AnchorPane home;
 	private Griglia griglia;
-	private Stage stage;
+	public Stage stage;
 	private Scene scene;
+	public FPMainController() {
+		
+	}
 	
 	public void goToPlay(ActionEvent event) throws IOException {
 		//Griglia griglia=new Griglia();
@@ -28,6 +31,7 @@ public class FPMainController  {
 		FPGraphics graphics=new FPGraphics(griglia);
 		FPGame game=new FPGame(griglia,graphics);
 		FPGameController controller=new FPGameController(graphics);
+		FPPauseMenuController pmc = new FPPauseMenuController(graphics);
 		MouseController mouseController=new MouseController(griglia,graphics,game);
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);

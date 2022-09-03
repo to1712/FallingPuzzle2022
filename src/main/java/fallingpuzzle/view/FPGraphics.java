@@ -4,13 +4,21 @@ package fallingpuzzle.view;
 
 
 
+import java.io.IOException;
+
+import fallingpuzzle.controller.FPMainController;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -21,11 +29,12 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class FPGraphics extends StackPane{
 	
 	private final int DIM=50;
-	
+	public FPMainController mainC = new FPMainController();
 	public Canvas canvas;	
 	private Griglia griglia=null;
 	
@@ -50,6 +59,7 @@ public class FPGraphics extends StackPane{
 	
 	private AnchorPane pane=null;
 	
+	public FPGraphics() {};
 	
 	public FPGraphics(Griglia griglia){
 		super();
@@ -192,6 +202,30 @@ public class FPGraphics extends StackPane{
 		homeButton.setBackground(null);
 		homeButton.setTranslateX(260);
 		homeButton.setTranslateY(380);
+		
+		exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("voglio uscire");
+				
+			}
+			
+		});
+		
+		
+		homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("Torniamo alla home?");
+			
+	            
+			}
+			
+		});
+		
+		
 		
 		
 		pauseBackground.getChildren().add(pausa);
