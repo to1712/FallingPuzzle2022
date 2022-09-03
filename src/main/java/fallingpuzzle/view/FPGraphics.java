@@ -13,38 +13,41 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 public class FPGraphics extends StackPane{
 	
-
-    @FXML
-    private Button exitButton;
-
-    @FXML
-    private Button homeButton;
-
-    @FXML
-    private AnchorPane pausaPane;
-
-	
-	
 	private final int DIM=50;
+	
 	public Canvas canvas;	
 	private Griglia griglia=null;
+	
 	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
 	private Image frameImg = new Image(getClass().getResourceAsStream("/images/Frame.png"));
 	private Image pausaButtonFrame = new Image(getClass().getResourceAsStream("/images/pausaButton.png"));
 	private Image gameFrame = new Image(getClass().getResourceAsStream("/images/gameFrame.png"));
+	private Image pausaMenu = new Image(getClass().getResourceAsStream("/images/pausaMenu_preview_rev_1.png"));
+	private Image exitButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseExitButton_preview_rev_1.png"));
+	private Image homeButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseHomeButton_preview_rev_1.png"));
+	
+	private ImageView pm = new ImageView(pausaMenu);
 	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
 	private ImageView Frame = new ImageView();
 	private ImageView Frame2 = new ImageView();
+	private ImageView exitFrame = new ImageView(exitButtonFrame);
+	private ImageView homeFrame = new ImageView(homeButtonFrame);
+	
 	public Button pausaButton;
+	public Button exitButton;
+	public Button homeButton;
+	
 	private AnchorPane pane=null;
 	
 	
@@ -107,7 +110,7 @@ public class FPGraphics extends StackPane{
 		pausaButton.setTranslateY(20);
 		
 		pane.getChildren().add(pausaButton);
-		pane.getChildren().add(pausaPane);
+	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
 	}
 	
@@ -157,6 +160,46 @@ public class FPGraphics extends StackPane{
 		}
 		griglia.aggiornaGriglia();
 	}
+	
+	/*public void setPane(AnchorPane ach) {
+		pane.getChildren().add(ach);
+		
+		}*/
+	
+	
+	public void showPauseMenu() {
+		AnchorPane pauseBackground = new AnchorPane();
+		pauseBackground.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT,null,null)));
+		pauseBackground.setPrefHeight(900);
+		pauseBackground.setPrefWidth(700);
+		
+		Pane pausa = new Pane();
+		
+		pausa.setBackground(new Background(new BackgroundImage(pausaMenu,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+	//	pausa.setBackground(new Background(new BackgroundFill(Color.RED,null,null)));
+		pausa.setPrefHeight(358);
+		pausa.setPrefWidth(324);
+		pausa.setLayoutX(180);
+		pausa.setLayoutY(250);
+		
+		exitButton = new Button();
+		exitButton.setGraphic(exitFrame);
+		exitButton.setBackground(null);
+		exitButton.setTranslateX(250);
+		exitButton.setTranslateY(430);
+		homeButton = new Button();
+		homeButton.setGraphic(homeFrame);
+		homeButton.setBackground(null);
+		homeButton.setTranslateX(260);
+		homeButton.setTranslateY(380);
+		
+		
+		pauseBackground.getChildren().add(pausa);
+		pane.getChildren().add(pauseBackground);
+		pane.getChildren().add(exitButton);
+		pane.getChildren().add(homeButton);	
+	}
+	
 }
 
 	
