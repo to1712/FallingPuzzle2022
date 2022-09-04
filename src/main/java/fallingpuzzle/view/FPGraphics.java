@@ -59,6 +59,7 @@ public class FPGraphics extends StackPane{
 	public Button pausaButton;
 	public Button exitButton;
 	public Button homeButton;
+	public AnchorPane pauseBackground ;
 	
 	private AnchorPane pane=null;
 	
@@ -125,6 +126,7 @@ public class FPGraphics extends StackPane{
 		pane.getChildren().add(pausaButton);
 	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
+		showPauseMenu();
 	}
 	
 	public void matrix() {
@@ -167,12 +169,12 @@ public class FPGraphics extends StackPane{
 		}	
 	}
 	
-	public void resetGame() {
+	public void gameOver() {
 		if(griglia.dead()==true) {
-			griglia=new Griglia();
+			
 			
 		}
-		griglia.aggiornaGriglia();
+		
 	}
 	
 	/*public void setPane(AnchorPane ach) {
@@ -182,7 +184,7 @@ public class FPGraphics extends StackPane{
 	
 	
 	public void showPauseMenu() {
-		final AnchorPane pauseBackground = new AnchorPane();
+		pauseBackground = new AnchorPane();
 		pauseBackground.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT,null,null)));
 		pauseBackground.setPrefHeight(900);
 		pauseBackground.setPrefWidth(700);
@@ -207,40 +209,7 @@ public class FPGraphics extends StackPane{
 		homeButton.setTranslateX(260);
 		homeButton.setTranslateY(380);
 		
-		exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			public void handle(MouseEvent event) {
-				// TODO Auto-generated method stub
-				System.out.println("voglio uscire");
-				exitButton.setVisible(false);
-				homeButton.setVisible(false);
-				pauseBackground.setVisible(false);
-			}
-			
-		});
 		
-		
-		homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			public void handle(MouseEvent event) {
-				// TODO Auto-generated method stub
-				System.out.println("Torniamo alla home?");
-				Parent part;
-				try {
-					part = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
-					Stage stage = new Stage();
-		        Scene scene = new Scene(part);
-		        stage.setScene(scene);
-		        stage.show();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		        
-	            
-			}
-			
-		});
 		
 		
 		

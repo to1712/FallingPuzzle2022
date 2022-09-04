@@ -39,7 +39,7 @@ public class FPGame {
 			public void run() {
 				Platform.runLater(new Runnable() {
 					public void run() {
-						graphics.resetGame();
+						graphics.gameOver();
 						if(cont==0) {
 							graphics.matrix();
 						}
