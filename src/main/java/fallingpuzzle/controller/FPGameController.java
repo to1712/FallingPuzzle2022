@@ -1,6 +1,7 @@
 package fallingpuzzle.controller;
 
 
+import fallingpuzzle.FPapplication;
 import fallingpuzzle.view.FPGraphics;
 import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;
@@ -18,10 +19,12 @@ public class FPGameController  {
 	
 
 	private FPGraphics graphics;
+	private FPapplication fp;
 	
 	public FPGameController(FPGraphics graphics) {
 		this.graphics=graphics;
 		controller();
+		musicController();
 	}
 	
 	
@@ -50,6 +53,22 @@ public class FPGameController  {
 			}
 		});
 
+	}
+	//questo sarebbe il metodo per lo stop e play tramite bottone
+	public void musicController() {
+		graphics.musicButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			public void handle(MouseEvent event) {
+				if (graphics.musicButton.isSelected() == false) {
+                fp.bm.play();
+					
+			    } 
+
+			    if (graphics.musicButton.isSelected() == true) {
+
+			    	fp.bm.pause();
+			    }
+			}
+		});
 	}
 	
 }

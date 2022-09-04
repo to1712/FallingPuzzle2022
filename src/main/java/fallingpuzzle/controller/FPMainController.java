@@ -2,6 +2,7 @@ package fallingpuzzle.controller;
 
 import java.io.IOException;
 
+import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.mattoni.MouseController;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;

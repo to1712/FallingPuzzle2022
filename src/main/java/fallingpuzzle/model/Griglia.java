@@ -220,10 +220,11 @@ public class Griglia {
 	public boolean dead() {
 		for(int i=0; i<WIDTH; i++) {
 			if(mattonMatrix[i][0]!=0) {
-				return false;
+				resetMattonMatrix();
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 

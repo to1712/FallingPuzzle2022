@@ -69,7 +69,7 @@ public class MouseController     {
 				System.out.println("Rilascio");
 				if(mattoneSelezionato!=null)
 					mattoneSelezionato.setSelezionato(false);
-				game.mouseRilasciato(true);
+				game.mouseRilasciato();
 			}
 		});
 	}

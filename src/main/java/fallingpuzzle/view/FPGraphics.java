@@ -7,6 +7,7 @@ package fallingpuzzle.view;
 import java.io.IOException;
 
 import fallingpuzzle.controller.FPMainController;
+import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
 import javafx.event.EventHandler;
@@ -16,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -58,6 +60,13 @@ public class FPGraphics extends StackPane{
 	public Button pausaButton;
 	public Button exitButton;
 	public Button homeButton;
+<<<<<<< HEAD
+	public ToggleButton musicButton;
+	
+	
+=======
+	public AnchorPane pauseBackground ;
+>>>>>>> 3e257d5695cbd67351e586dbf057977ea61a6964
 	
 	private AnchorPane pane=null;
 	
@@ -121,9 +130,14 @@ public class FPGraphics extends StackPane{
 		pausaButton.setTranslateX(575);
 		pausaButton.setTranslateY(20);
 		
+		
+		 musicButton = new ToggleButton("Music On/Off");
+		
+		 pane.getChildren().add(musicButton);
 		pane.getChildren().add(pausaButton);
 	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
+		showPauseMenu();
 	}
 	
 	public void matrix() {
@@ -166,11 +180,12 @@ public class FPGraphics extends StackPane{
 		}	
 	}
 	
-	public void resetGame() {
-		if(griglia.dead()==false) {
-			this.griglia=new Griglia();
+	public void gameOver() {
+		if(griglia.dead()==true) {
+			
+			
 		}
-		griglia.aggiornaGriglia();
+		
 	}
 	
 	/*public void setPane(AnchorPane ach) {
@@ -180,7 +195,7 @@ public class FPGraphics extends StackPane{
 	
 	
 	public void showPauseMenu() {
-		final AnchorPane pauseBackground = new AnchorPane();
+		pauseBackground = new AnchorPane();
 		pauseBackground.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT,null,null)));
 		pauseBackground.setPrefHeight(900);
 		pauseBackground.setPrefWidth(700);
@@ -205,40 +220,7 @@ public class FPGraphics extends StackPane{
 		homeButton.setTranslateX(260);
 		homeButton.setTranslateY(380);
 		
-		exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			public void handle(MouseEvent event) {
-				// TODO Auto-generated method stub
-				System.out.println("voglio uscire");
-				exitButton.setVisible(false);
-				homeButton.setVisible(false);
-				pauseBackground.setVisible(false);
-			}
-			
-		});
 		
-		
-		homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			public void handle(MouseEvent event) {
-				// TODO Auto-generated method stub
-				System.out.println("Torniamo alla home?");
-				Parent part;
-				try {
-					part = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
-					Stage stage = new Stage();
-		        Scene scene = new Scene(part);
-		        stage.setScene(scene);
-		        stage.show();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		        
-	            
-			}
-			
-		});
 		
 		
 		

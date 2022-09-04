@@ -14,6 +14,13 @@ import javafx.stage.Stage;
 
 public class FPapplication extends Application {
 
+	Media media = new Media(getClass().getResource("/music/backgroundMusic.mp3").toExternalForm());
+	public MediaPlayer bm = new MediaPlayer(media);
+	
+	public FPapplication() {
+		
+	}
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
@@ -28,12 +35,12 @@ public class FPapplication extends Application {
 		}
 	}
 	
-	MediaPlayer bm;
+	
 	
 	public void music() {
 		//String path = "/FallingPuzzle2022/src/main/resources/Music/backgroundMusic.mp3";
-		Media media = new Media(getClass().getResource("/music/backgroundMusic.mp3").toExternalForm());
-		bm = new MediaPlayer(media);
+		//Media media = new Media(getClass().getResource("/music/backgroundMusic.mp3").toExternalForm());
+		//bm = new MediaPlayer(media);
 		bm.play();
 	}
 	
