@@ -53,8 +53,12 @@ public class FPGraphics extends StackPane{
 	private Image exitButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseExitButton_preview_rev_1.png"));
 	private Image homeButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseHomeButton_preview_rev_1.png"));
     private Image labelImage = new Image(getClass().getResourceAsStream("/images/score.png"));
+    private Image toggleImage = new Image(getClass().getResourceAsStream("/images/toggleButton.png"));
 	
-	private ImageView labelIV = new ImageView(labelImage);
+	
+	
+	private ImageView toggleIV = new ImageView(toggleImage);
+	
 	
 	private ImageView pm = new ImageView(pausaMenu);
 	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
