@@ -62,6 +62,7 @@ public class FPGraphics extends StackPane{
 	public Button pausaButton;
 	public Button exitButton;
 	public Button homeButton;
+	public Pane pausa;
 	public ToggleButton musicButton;
 	
 	
@@ -144,6 +145,10 @@ public class FPGraphics extends StackPane{
 		pane.getChildren().add(point);
 		pane.getChildren().add(musicButton);
 		pane.getChildren().add(pausaButton);
+		exitButton = new Button();
+		homeButton = new Button();
+		pauseBackground = new AnchorPane();
+		pausa = new Pane();
 	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
 	//	showPauseMenu();
@@ -204,12 +209,12 @@ public class FPGraphics extends StackPane{
 	
 	
 	public void showPauseMenu() {
-		pauseBackground = new AnchorPane();
+		
 		pauseBackground.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT,null,null)));
 		pauseBackground.setPrefHeight(900);
 		pauseBackground.setPrefWidth(700);
 		
-		Pane pausa = new Pane();
+		
 		
 		pausa.setBackground(new Background(new BackgroundImage(pausaMenu,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 	//	pausa.setBackground(new Background(new BackgroundFill(Color.RED,null,null)));
@@ -218,7 +223,7 @@ public class FPGraphics extends StackPane{
 		pausa.setLayoutX(180);
 		pausa.setLayoutY(250);
 		
-		exitButton = new Button();
+	
 		exitButton.setGraphic(exitFrame);
 		exitButton.setBackground(null);
 		exitButton.setTranslateX(250);
@@ -235,37 +240,19 @@ public class FPGraphics extends StackPane{
 		});
 		
 		
-		homeButton = new Button();
+		
 		homeButton.setGraphic(homeFrame);
 		homeButton.setBackground(null);
 		homeButton.setTranslateX(260);
 		homeButton.setTranslateY(380);
 		
-		homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			
-			public void handle(MouseEvent event) {
-				// TODO Auto-generated method stub
-				System.out.println("Torniamo alla home?");
-				Parent part;
-				try {
-					part = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
-					Stage stage = new Stage();
-		        Scene scene = new Scene(part);
-		        stage.setScene(scene);
-		        stage.show();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		}
-		});
-		
-		
+	
+		pausa.getChildren().add(homeButton);	
+		pausa.getChildren().add(exitButton);
 		pauseBackground.getChildren().add(pausa);
 		pane.getChildren().add(pauseBackground);
-		pane.getChildren().add(exitButton);
-		pane.getChildren().add(homeButton);	
+		//pane.getChildren().add(exitButton);
+		//pane.getChildren().add(homeButton);	
 	}
 	
 }

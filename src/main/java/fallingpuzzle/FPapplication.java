@@ -4,6 +4,8 @@ package fallingpuzzle;
 import java.io.File;
 import java.nio.file.Paths;
 
+import fallingpuzzle.controller.FPGameController;
+import fallingpuzzle.model.Music;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,17 +16,14 @@ import javafx.stage.Stage;
 
 public class FPapplication extends Application {
 
-	Media media = new Media(getClass().getResource("/music/backgroundMusic.mp3").toExternalForm());
-	public MediaPlayer bm = new MediaPlayer(media);
 	
-	public FPapplication() {
-		
-	}
+	public FPapplication() {}
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		try {
-			music();
+			//Music music = new Music();
+			//music.music(true);
 			Parent root= FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
 			Scene home= new Scene(root);
 			primaryStage.setScene(home);
@@ -35,14 +34,6 @@ public class FPapplication extends Application {
 		}
 	}
 	
-	
-	
-	public void music() {
-		//String path = "/FallingPuzzle2022/src/main/resources/Music/backgroundMusic.mp3";
-		//Media media = new Media(getClass().getResource("/music/backgroundMusic.mp3").toExternalForm());
-		//bm = new MediaPlayer(media);
-		bm.play();
-	}
 	
 	
 	public static void main(String[] args) {
