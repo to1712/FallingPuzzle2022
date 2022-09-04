@@ -40,7 +40,7 @@ public class FPGraphics extends StackPane{
 	public FPMainController mainC = new FPMainController();
 	public Canvas canvas;	
 	private Griglia griglia=null;
-	public FPGame fpg = new FPGame(griglia,this);
+	//public FPGame fpg = new FPGame(griglia,this);
 	
 	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
 	private Image frameImg = new Image(getClass().getResourceAsStream("/images/Frame.png"));
@@ -140,15 +140,13 @@ public class FPGraphics extends StackPane{
 		point.setLayoutX(200);
 		point.setLayoutY(200);
 		point.setVisible(true);
-		System.out.println(fpg.point);
 		
-		 pane.getChildren().add(point);
-		 pane.getChildren().add(musicButton);
+		pane.getChildren().add(point);
+		pane.getChildren().add(musicButton);
 		pane.getChildren().add(pausaButton);
 	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
 	//	showPauseMenu();
-		System.out.println("Sono arrivato . "+fpg.getPunteggio());
 	}
 	
 	public void matrix() {

@@ -40,6 +40,7 @@ public class FPGame {
 				Platform.runLater(new Runnable() {
 					public void run() {
 						graphics.gameOver();
+						punteggio();
 						if(cont==0) {
 							graphics.matrix();
 						}
@@ -73,9 +74,6 @@ public class FPGame {
 		}
 		//muove=false;
 	}
-	public String getPunteggio() {
-		return point;
-	}
 	
 	private void setGravity() {
 		griglia.deveCadere(true);
@@ -91,8 +89,6 @@ public class FPGame {
 				//System.out.println("Punti: "+p+" ");
 			}
 			point= Integer.toString(punti);
-			getPunteggio();
-			System.out.println("Punti: "+getPunteggio()+" ");
 			//graphics.matrix();
 		}
 		
@@ -101,7 +97,9 @@ public class FPGame {
 	
 	
 	
-	
+	public void punteggio() {
+		graphics.point.setText(point);
+	}
 	
 	public void muovi(int x,int y,boolean d_s) {
 		Mattoni mattoneSelezionato=griglia.getMattoni()[x][y];
