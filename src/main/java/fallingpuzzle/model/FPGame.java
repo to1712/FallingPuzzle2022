@@ -8,6 +8,7 @@ import java.util.TimerTask;
 
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Platform;
+import javafx.scene.control.Label;
 
 
 
@@ -24,8 +25,7 @@ public class FPGame {
 	private boolean rilasciato=false;
 	private boolean muove=false;
 	private boolean reset=false;
-	
-	
+	public String point;
 	
 
 	
@@ -73,6 +73,9 @@ public class FPGame {
 		}
 		//muove=false;
 	}
+	public String getPunteggio() {
+		return point;
+	}
 	
 	private void setGravity() {
 		griglia.deveCadere(true);
@@ -85,11 +88,21 @@ public class FPGame {
 			if(p!=0) {
 				punti+=p;
 				this.griglia.deveCadere(true);
+				//System.out.println("Punti: "+p+" ");
 			}
+			point= Integer.toString(punti);
+			getPunteggio();
+			System.out.println("Punti: "+getPunteggio()+" ");
 			//graphics.matrix();
 		}
+		
 		this.griglia.resettaMoltiplicatore();
 	}
+	
+	
+	
+	
+	
 	public void muovi(int x,int y,boolean d_s) {
 		Mattoni mattoneSelezionato=griglia.getMattoni()[x][y];
 		muove=false;

@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -39,6 +40,7 @@ public class FPGraphics extends StackPane{
 	public FPMainController mainC = new FPMainController();
 	public Canvas canvas;	
 	private Griglia griglia=null;
+	public FPGame fpg = new FPGame(griglia,this);
 	
 	private Image img = new Image(getClass().getResourceAsStream("/images/FallingBackGround.png"));
 	private Image frameImg = new Image(getClass().getResourceAsStream("/images/Frame.png"));
@@ -60,23 +62,21 @@ public class FPGraphics extends StackPane{
 	public Button pausaButton;
 	public Button exitButton;
 	public Button homeButton;
-
 	public ToggleButton musicButton;
+	
+	
+	public Label point;
 	
 	
 
 	public AnchorPane pauseBackground ;
-
-
-
-
-	
 	private AnchorPane pane=null;
 	
-	public FPGraphics() {};
+	
 	
 	public FPGraphics(Griglia griglia){
 		super();
+		
 		this.griglia=griglia;
 		pane=new AnchorPane();
 		getChildren().add(pane);
@@ -135,12 +135,20 @@ public class FPGraphics extends StackPane{
 		
 		
 		 musicButton = new ToggleButton("Music On/Off");
+		point =  new Label("CIAO");
+		point.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
+		point.setLayoutX(200);
+		point.setLayoutY(200);
+		point.setVisible(true);
+		System.out.println(fpg.point);
 		
+		 pane.getChildren().add(point);
 		 pane.getChildren().add(musicButton);
 		pane.getChildren().add(pausaButton);
 	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
 	//	showPauseMenu();
+		System.out.println("Sono arrivato . "+fpg.getPunteggio());
 	}
 	
 	public void matrix() {
