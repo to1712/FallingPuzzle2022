@@ -100,12 +100,16 @@ public class FPGameController  {
 				if (graphics.musicButton.isSelected() == false) {
 					Image img = new Image(getClass().getResourceAsStream("/images/Volume_UP.png"));
 					ImageView imgV = new ImageView(img);
+					imgV.setFitHeight(40);
+					imgV.setFitWidth(40);
 					graphics.musicButton.setGraphic(imgV);
 					music.music(true);
 			    } 
 			    if (graphics.musicButton.isSelected() == true) {
 			    	Image img = new Image(getClass().getResourceAsStream("/images/Volume_Down.png"));
 					ImageView imgV = new ImageView(img);
+					imgV.setFitHeight(40);
+					imgV.setFitWidth(40);
 					graphics.musicButton.setGraphic(imgV);
 			    	music.music(false);
 			    }

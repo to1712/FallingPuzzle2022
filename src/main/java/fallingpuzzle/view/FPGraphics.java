@@ -237,11 +237,13 @@ public class FPGraphics extends StackPane{
 		exitButton.setBackground(null);
 		exitButton.setTranslateX(76);
 		exitButton.setTranslateY(180);
-		
-		toggleIV.resize(10, 10);
+		toggleIV.setFitHeight(40);
+		toggleIV.setFitWidth(40);
 		musicButton.setPrefSize(10, 10);
 		musicButton.setGraphic(toggleIV);
-		//musicButton.setBackground(null);
+		musicButton.setTranslateX(135);
+		musicButton.setTranslateY(215);
+		musicButton.setBackground(null);
 		
 		
 		homeButton.setGraphic(homeFrame);
