@@ -60,13 +60,16 @@ public class FPGraphics extends StackPane{
 	public Button pausaButton;
 	public Button exitButton;
 	public Button homeButton;
-<<<<<<< HEAD
+
 	public ToggleButton musicButton;
 	
 	
-=======
+
 	public AnchorPane pauseBackground ;
->>>>>>> 3e257d5695cbd67351e586dbf057977ea61a6964
+
+
+
+
 	
 	private AnchorPane pane=null;
 	
