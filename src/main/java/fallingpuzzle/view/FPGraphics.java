@@ -17,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
@@ -32,6 +33,8 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class FPGraphics extends StackPane{
@@ -49,7 +52,9 @@ public class FPGraphics extends StackPane{
 	private Image pausaMenu = new Image(getClass().getResourceAsStream("/images/pausaMenu_preview_rev_1.png"));
 	private Image exitButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseExitButton_preview_rev_1.png"));
 	private Image homeButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseHomeButton_preview_rev_1.png"));
+    private Image labelImage = new Image(getClass().getResourceAsStream("/images/score.png"));
 	
+	private ImageView labelIV = new ImageView(labelImage);
 	
 	private ImageView pm = new ImageView(pausaMenu);
 	private ImageView pausaFrame = new ImageView(pausaButtonFrame);
@@ -136,10 +141,15 @@ public class FPGraphics extends StackPane{
 		
 		 musicButton = new ToggleButton("Music On/Off");
 		point =  new Label("CIAO");
-		point.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
-		point.setLayoutX(200);
-		point.setLayoutY(200);
-		point.setVisible(true);
+		//point.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
+		point.setBackground(new Background(new BackgroundImage(labelImage,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+		point.setLayoutX(250);
+		point.setLayoutY(110);
+		point.setPrefHeight(66);
+		point.setPrefWidth(110);
+	point.setContentDisplay(ContentDisplay.RIGHT);
+	point.setFont(new Font("Arial", 30));
+		//point.setVisible(true);
 		
 		pane.getChildren().add(point);
 		pane.getChildren().add(musicButton);
@@ -216,7 +226,7 @@ public class FPGraphics extends StackPane{
 		pausa.setPrefHeight(358);
 		pausa.setPrefWidth(324);
 		pausa.setLayoutX(180);
-		pausa.setLayoutY(250);
+		pausa.setLayoutY(300);
 		
 		exitButton = new Button();
 		exitButton.setGraphic(exitFrame);
