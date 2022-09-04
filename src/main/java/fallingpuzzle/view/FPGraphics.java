@@ -7,6 +7,7 @@ package fallingpuzzle.view;
 import java.io.IOException;
 
 import fallingpuzzle.controller.FPMainController;
+import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
 import javafx.event.EventHandler;
@@ -167,8 +168,9 @@ public class FPGraphics extends StackPane{
 	}
 	
 	public void resetGame() {
-		if(griglia.dead()==false) {
-			this.griglia=new Griglia();
+		if(griglia.dead()==true) {
+			griglia=new Griglia();
+			
 		}
 		griglia.aggiornaGriglia();
 	}

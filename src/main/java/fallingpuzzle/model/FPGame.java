@@ -23,6 +23,7 @@ public class FPGame {
 	private int cont=0;
 	private boolean rilasciato=false;
 	private boolean muove=false;
+	private boolean reset=false;
 	
 	
 	
@@ -38,22 +39,16 @@ public class FPGame {
 			public void run() {
 				Platform.runLater(new Runnable() {
 					public void run() {
+						graphics.resetGame();
 						if(cont==0) {
 							graphics.matrix();
-							//g.caduta();
-							graphics.resetGame();
 						}
 						else {
 							graphics.matrix();
-							//g.caduta();
 							setGravity();
-
-							graphics.resetGame();
-
-						//	resetGame();
-
 						}
 						cont++;
+						
 					}
 				});
 			}
@@ -61,16 +56,22 @@ public class FPGame {
 		cades.schedule(task,0,500);
 	}
 	
+	public void resetta() {
+		if(griglia.dead()==true) {
+			System.out.println("WE");
+			reset=true;
+		}
+	}
 	
 	public void mattoneSelezionato(int x, int y){
         this.griglia.setMattoneSelezionato(x, y);
     }
 	
-	public void mouseRilasciato(boolean rilasciato) {
-		this.rilasciato=rilasciato;
-		if(rilasciato && muove) {
+	public void mouseRilasciato() {
+		if(muove) {
 			griglia.generationRiga();
 		}
+		//muove=false;
 	}
 	
 	private void setGravity() {
@@ -154,6 +155,7 @@ public class FPGame {
 				}
 			}
 		}
+		
 	}
 	
 	
