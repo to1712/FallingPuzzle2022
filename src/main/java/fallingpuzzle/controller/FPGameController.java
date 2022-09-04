@@ -1,7 +1,10 @@
 package fallingpuzzle.controller;
 
 
+import java.io.IOException;
+
 import fallingpuzzle.FPapplication;
+import fallingpuzzle.model.Music;
 import fallingpuzzle.view.FPGraphics;
 import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;
@@ -9,10 +12,15 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Scale;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class FPGameController  {
@@ -20,8 +28,10 @@ public class FPGameController  {
 
 	private FPGraphics graphics;
 	private FPapplication fp;
+	private Music music;
 	
-	public FPGameController(FPGraphics graphics) {
+	public FPGameController(FPGraphics graphics,Music music) {
+		this.music=music;
 		this.graphics=graphics;
 		controller();
 		musicController();
@@ -46,11 +56,29 @@ public class FPGameController  {
 		graphics.pausaButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
 				System.out.println("sono dentro handle()");
-				/*graphics.setPane(pp1);
-				System.out.println("Pane aggiunto");*/
-				
 				graphics.showPauseMenu();
 			}
+		});
+		graphics.homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			
+			public void handle(MouseEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("Torniamo alla home?");
+				Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+				Parent root;
+				try {
+					
+					root = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
+					music.music(false);
+					Scene home= new Scene(root);
+					stage.setScene(home);
+					stage.show();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 		});
 
 	}
@@ -59,13 +87,11 @@ public class FPGameController  {
 		graphics.musicButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
 				if (graphics.musicButton.isSelected() == false) {
-                fp.bm.play();
-					
+					music.music(true);
 			    } 
-
 			    if (graphics.musicButton.isSelected() == true) {
 
-			    	fp.bm.pause();
+			    	music.music(false);
 			    }
 			}
 		});

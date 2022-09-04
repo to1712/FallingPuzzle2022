@@ -6,6 +6,7 @@ import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.mattoni.MouseController;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
+import fallingpuzzle.model.Music;
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -29,9 +30,11 @@ public class FPMainController  {
 	public void goToPlay(ActionEvent event) throws IOException {
 		//Griglia griglia=new Griglia();
 		griglia = new Griglia();
+		Music music = new Music();
+		music.music(true);
 		FPGraphics graphics=new FPGraphics(griglia);
 		FPGame game=new FPGame(griglia,graphics);
-		FPGameController controller=new FPGameController(graphics);
+		FPGameController controller=new FPGameController(graphics,music);
 		MouseController mouseController=new MouseController(griglia,graphics,game);
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);
