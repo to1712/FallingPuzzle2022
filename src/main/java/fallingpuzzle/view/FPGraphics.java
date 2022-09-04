@@ -265,8 +265,8 @@ public class FPGraphics extends StackPane{
 		pausa.getChildren().add(exitButton);
 		pauseBackground.getChildren().add(pausa);
 		pane.getChildren().add(pauseBackground);
-		//pane.getChildren().add(exitButton);
-		//pane.getChildren().add(homeButton);	
+		pane.getChildren().add(exitButton);
+		pane.getChildren().add(homeButton);	
 	}
 	
 }
