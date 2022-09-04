@@ -160,6 +160,8 @@ public class FPGraphics extends StackPane{
 		homeButton = new Button();
 		pauseBackground = new AnchorPane();
 		pausa = new Pane();
+		pauseMenu();
+		pauseBackground.setVisible(false);
 	
 	}
 	
@@ -216,8 +218,8 @@ public class FPGraphics extends StackPane{
 		
 		}*/
 	
-	
-	public void showPauseMenu() {
+
+	public void pauseMenu() {
 		
 		pauseBackground.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT,null,null)));
 		pauseBackground.setPrefHeight(900);

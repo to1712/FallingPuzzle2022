@@ -58,7 +58,7 @@ public class FPGameController  {
 		graphics.pausaButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
 				System.out.println("sono dentro handle()");
-				graphics.showPauseMenu();
+				graphics.pauseBackground.setVisible(true);
 			}
 		});
 		graphics.homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -86,8 +86,6 @@ public class FPGameController  {
 
 			public void handle(MouseEvent event) {
 				System.out.println("voglio uscire");
-				graphics.exitButton.setVisible(false);
-				graphics.homeButton.setVisible(false);
 				graphics.pauseBackground.setVisible(false);
 			}
 		});
