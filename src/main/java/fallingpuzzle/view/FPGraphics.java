@@ -230,7 +230,7 @@ public class FPGraphics extends StackPane{
 		pausa.setPrefHeight(358);
 		pausa.setPrefWidth(324);
 		pausa.setLayoutX(180);
-		pausa.setLayoutY(330);
+		pausa.setLayoutY(280);
 		
 	
 		exitButton.setGraphic(exitFrame);

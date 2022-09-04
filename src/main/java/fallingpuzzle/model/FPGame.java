@@ -101,6 +101,10 @@ public class FPGame {
 		graphics.point.setText(point);
 	}
 	
+	public int getPoint() {
+		return punti;
+	}
+	
 	public void muovi(int x,int y,boolean d_s) {
 		Mattoni mattoneSelezionato=griglia.getMattoni()[x][y];
 		muove=false;
