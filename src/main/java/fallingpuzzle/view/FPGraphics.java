@@ -53,11 +53,11 @@ public class FPGraphics extends StackPane{
 	private Image exitButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseExitButton_preview_rev_1.png"));
 	private Image homeButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseHomeButton_preview_rev_1.png"));
     private Image labelImage = new Image(getClass().getResourceAsStream("/images/score.png"));
-    private Image toggleImage = new Image(getClass().getResourceAsStream("/images/toggleButton.png"));
+    public Image toggleImage = new Image(getClass().getResourceAsStream("/images/Volume_UP.png"));
 	
 	
 	
-	private ImageView toggleIV = new ImageView(toggleImage);
+	public ImageView toggleIV = new ImageView(toggleImage);
 	
 	
 	private ImageView pm = new ImageView(pausaMenu);
@@ -143,8 +143,6 @@ public class FPGraphics extends StackPane{
 		pausaButton.setTranslateX(575);
 		pausaButton.setTranslateY(20);
 		
-		
-		 musicButton = new ToggleButton("Music On/Off");
 		point =  new Label("CIAO");
 		//point.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
 		point.setBackground(new Background(new BackgroundImage(labelImage,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
@@ -152,20 +150,17 @@ public class FPGraphics extends StackPane{
 		point.setLayoutY(110);
 		point.setPrefHeight(66);
 		point.setPrefWidth(110);
-	point.setContentDisplay(ContentDisplay.RIGHT);
-	point.setFont(new Font("Arial", 30));
-		//point.setVisible(true);
+		point.setContentDisplay(ContentDisplay.RIGHT);
+		point.setFont(new Font("Arial", 30));
 		
 		pane.getChildren().add(point);
-		pane.getChildren().add(musicButton);
 		pane.getChildren().add(pausaButton);
+		musicButton = new ToggleButton();
 		exitButton = new Button();
 		homeButton = new Button();
 		pauseBackground = new AnchorPane();
 		pausa = new Pane();
-	//	pane.getChildren().add(pausaPane);
-		//canvas.setDisable(true);
-	//	showPauseMenu();
+	
 	}
 	
 	public void matrix() {
@@ -240,27 +235,21 @@ public class FPGraphics extends StackPane{
 	
 		exitButton.setGraphic(exitFrame);
 		exitButton.setBackground(null);
-		exitButton.setTranslateX(250);
-		exitButton.setTranslateY(430);
+		exitButton.setTranslateX(76);
+		exitButton.setTranslateY(180);
 		
-		exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-
-			public void handle(MouseEvent event) {
-				System.out.println("voglio uscire");
-				exitButton.setVisible(false);
-				homeButton.setVisible(false);
-				pauseBackground.setVisible(false);
-			}
-		});
-		
+		toggleIV.resize(10, 10);
+		musicButton.setPrefSize(10, 10);
+		musicButton.setGraphic(toggleIV);
+		//musicButton.setBackground(null);
 		
 		
 		homeButton.setGraphic(homeFrame);
 		homeButton.setBackground(null);
-		homeButton.setTranslateX(260);
-		homeButton.setTranslateY(380);
+		homeButton.setTranslateX(84);
+		homeButton.setTranslateY(130);
 		
-	
+		pausa.getChildren().add(musicButton);
 		pausa.getChildren().add(homeButton);	
 		pausa.getChildren().add(exitButton);
 		pauseBackground.getChildren().add(pausa);

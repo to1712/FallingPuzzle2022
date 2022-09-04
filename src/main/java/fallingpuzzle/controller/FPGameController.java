@@ -17,6 +17,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.transform.Scale;
@@ -80,6 +82,15 @@ public class FPGameController  {
 				}
 		}
 		});
+		graphics.exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent event) {
+				System.out.println("voglio uscire");
+				graphics.exitButton.setVisible(false);
+				graphics.homeButton.setVisible(false);
+				graphics.pauseBackground.setVisible(false);
+			}
+		});
 
 	}
 	//questo sarebbe il metodo per lo stop e play tramite bottone
@@ -87,10 +98,15 @@ public class FPGameController  {
 		graphics.musicButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			public void handle(MouseEvent event) {
 				if (graphics.musicButton.isSelected() == false) {
+					Image img = new Image(getClass().getResourceAsStream("/images/Volume_UP.png"));
+					ImageView imgV = new ImageView(img);
+					graphics.musicButton.setGraphic(imgV);
 					music.music(true);
 			    } 
 			    if (graphics.musicButton.isSelected() == true) {
-
+			    	Image img = new Image(getClass().getResourceAsStream("/images/Volume_Down.png"));
+					ImageView imgV = new ImageView(img);
+					graphics.musicButton.setGraphic(imgV);
 			    	music.music(false);
 			    }
 			}
