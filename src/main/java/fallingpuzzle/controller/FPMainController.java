@@ -32,7 +32,6 @@ public class FPMainController  {
 		FPGraphics graphics=new FPGraphics(griglia);
 		FPGame game=new FPGame(griglia,graphics);
 		FPGameController controller=new FPGameController(graphics);
-		FPPauseMenuController pmc = new FPPauseMenuController(graphics);
 		MouseController mouseController=new MouseController(griglia,graphics,game);
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);

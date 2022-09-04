@@ -140,7 +140,7 @@ public class FPGraphics extends StackPane{
 		pane.getChildren().add(pausaButton);
 	//	pane.getChildren().add(pausaPane);
 		//canvas.setDisable(true);
-		showPauseMenu();
+	//	showPauseMenu();
 	}
 	
 	public void matrix() {
@@ -217,15 +217,43 @@ public class FPGraphics extends StackPane{
 		exitButton.setBackground(null);
 		exitButton.setTranslateX(250);
 		exitButton.setTranslateY(430);
+		
+		exitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent event) {
+				System.out.println("voglio uscire");
+				exitButton.setVisible(false);
+				homeButton.setVisible(false);
+				pauseBackground.setVisible(false);
+			}
+		});
+		
+		
 		homeButton = new Button();
 		homeButton.setGraphic(homeFrame);
 		homeButton.setBackground(null);
 		homeButton.setTranslateX(260);
 		homeButton.setTranslateY(380);
 		
-		
-		
-		
+		homeButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			
+			public void handle(MouseEvent event) {
+				// TODO Auto-generated method stub
+				System.out.println("Torniamo alla home?");
+				Parent part;
+				try {
+					part = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
+					Stage stage = new Stage();
+		        Scene scene = new Scene(part);
+		        stage.setScene(scene);
+		        stage.show();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+		});
 		
 		
 		pauseBackground.getChildren().add(pausa);
