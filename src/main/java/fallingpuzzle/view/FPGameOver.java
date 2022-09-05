@@ -36,6 +36,9 @@ public class FPGameOver extends StackPane {
 	public Label actualPunteggio;
 	public Label maxPunteggio;
 
+
+
+
 	
 	public FPGameOver() {
 		this.setPrefHeight(900);
