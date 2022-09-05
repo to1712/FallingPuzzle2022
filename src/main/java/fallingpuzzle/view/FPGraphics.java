@@ -162,6 +162,7 @@ public class FPGraphics extends StackPane{
 		
 		pane.getChildren().add(point);
 		pane.getChildren().add(pausaButton);
+		
 		musicButton = new ToggleButton();
 		exitButton = new Button();
 		homeButton = new Button();
