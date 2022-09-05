@@ -4,7 +4,11 @@ package fallingpuzzle.controller;
 import java.io.IOException;
 
 import fallingpuzzle.FPapplication;
+import fallingpuzzle.controller.mattoni.MouseController;
+import fallingpuzzle.model.FPGame;
+import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Music;
+import fallingpuzzle.view.FPGameOver;
 import fallingpuzzle.view.FPGraphics;
 import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;
@@ -31,10 +35,14 @@ public class FPGameController  {
 	private FPGraphics graphics;
 	private FPapplication fp;
 	private Music music;
+	private FPGame game;
+	private FPGameOver go;
+	 
 	
-	public FPGameController(FPGraphics graphics,Music music) {
+	public FPGameController(FPGraphics graphics,Music music, FPGame game) {
 		this.music=music;
 		this.graphics=graphics;
+		this.game = game;
 		controller();
 		musicController();
 	}
@@ -89,8 +97,50 @@ public class FPGameController  {
 				graphics.pauseBackground.setVisible(false);
 			}
 		});
+		
+		game.game.homeButtonGO.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent event) {
+				System.out.println("Torniamo alla home?");
+				Stage stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+				Parent root;
+				try {
+					
+					root = FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
+					music.music(false);
+					Scene home= new Scene(root);
+					stage.setScene(home);
+					stage.show();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
+		game.game.restartButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+			public void handle(MouseEvent event) {
+				Griglia griglia = new Griglia();
+				Music music = new Music();
+				music.music(true);
+				FPGraphics graphics=new FPGraphics(griglia);
+				FPGame game=new FPGame(griglia,graphics, music);
+				FPGameController controller=new FPGameController(graphics,music,game);
+				MouseController mouseController=new MouseController(griglia,graphics,game);
+				FPGameOver go = new FPGameOver();
+				Stage stage= (Stage)((Node)event.getSource()).getScene().getWindow();
+				Scene scene=new Scene(graphics);
+				//scene=new Scene(go);
+				stage.setScene(scene);
+				stage.show();
+			}
+		});
 
 	}
+	
+	
 	//questo sarebbe il metodo per lo stop e play tramite bottone
 	public void musicController() {
 		graphics.musicButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
