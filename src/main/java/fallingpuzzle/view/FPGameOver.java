@@ -76,8 +76,8 @@ public class FPGameOver extends StackPane {
 		actualScoreIV.setFitWidth(250);
 		actualScoreIV.setFitHeight(100);
 		actualPunteggio.setGraphic(actualScoreIV);
-		actualPunteggio.setTranslateX(150);
-		actualPunteggio.setTranslateY(150);
+		actualPunteggio.setTranslateX(0);
+		actualPunteggio.setTranslateY(20);
 		
 		maxScore = new Image("/images/scorePiuGrande.png");
 		maxScoreIV = new ImageView(maxScore);
@@ -86,8 +86,9 @@ public class FPGameOver extends StackPane {
 		maxScoreIV.setFitWidth(250);
 		maxScoreIV.setFitHeight(100);
 		maxPunteggio.setGraphic(maxScoreIV);
-		maxPunteggio.setTranslateX(200);
-		maxPunteggio.setTranslateY(150);
+		maxPunteggio.setTranslateX(0);
+		maxPunteggio.setTranslateY(-60);
+		//maxPunteggio.setText("WEEEEE");
 		/*maxPunteggio.setPrefHeight(100);
 		maxPunteggio.setPrefWidth(250);*/
 		
