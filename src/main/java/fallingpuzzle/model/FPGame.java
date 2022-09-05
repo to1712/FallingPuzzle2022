@@ -34,7 +34,7 @@ public class FPGame {
 	public String point;
 	
 
-	
+	public FPGame() {}
 	
 	public FPGame(final Griglia g,final FPGraphics graphics) {
 		this.graphics=graphics;

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.mattoni.MouseController;
+import fallingpuzzle.model.DBConnection;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Music;

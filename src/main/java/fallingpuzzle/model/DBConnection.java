@@ -7,19 +7,24 @@ import java.sql.Statement;
 
 public class DBConnection {
 	
+	public DBConnection() {};
 	
-	
+	private static String url = "jdbc:sqlite:FallingPuzzle'sDB.db";
+	private static Connection con;
+	public static FPGame fpg = new FPGame();
+	private static int score = fpg.getPoint();
 
 	public static void main(String[] args) {
-		String url = "jdbc:sqlite:FallingPuzzle'sDB.db";
-		Connection con;
+		 url = "jdbc:sqlite:FallingPuzzle'sDB.db";
 		
 		try {
 			con = DriverManager.getConnection(url);
 			if(con!=null && !con.isClosed()) {
 				System.out.println("Connected succesfully");
+				System.out.println("Punteggio: "+score);
 				Statement stmt = con.createStatement();
-			//	stmt.executeUpdate("INSERT INTO Punteggi VALUES ")
+				stmt.executeUpdate("INSERT INTO Punteggi VALUES ("+score+") ");
+				stmt.close();
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -28,8 +33,8 @@ public class DBConnection {
 
 	}
 	
-/*	public void insert(Connection con, String url) {
+	public void insert(Connection con, String url) {
 		
-	}*/
+	}
     
 }
