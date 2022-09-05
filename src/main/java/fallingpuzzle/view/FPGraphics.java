@@ -13,6 +13,8 @@ import fallingpuzzle.model.Mattoni;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -149,8 +151,13 @@ public class FPGraphics extends StackPane{
 		point.setLayoutX(250);
 		point.setLayoutY(110);
 		point.setPrefHeight(66);
-		point.setPrefWidth(110);
-		point.setContentDisplay(ContentDisplay.RIGHT);
+		point.setPrefWidth(115);
+		//point.setContentDisplay(ContentDisplay.RIGHT);
+		point.setAlignment(Pos.CENTER);
+		point.setPadding(new Insets(10));
+		point.setStyle("-fx-font-size: 40px; -fx-text-fill: black;");
+		// label.setMaxWidth(250);
+		point.setWrapText(true);
 		point.setFont(new Font("Arial", 30));
 		
 		pane.getChildren().add(point);
