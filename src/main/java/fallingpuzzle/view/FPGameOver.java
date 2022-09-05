@@ -39,6 +39,7 @@ public class FPGameOver extends StackPane {
 
 
 
+
 	
 	public FPGameOver() {
 		this.setPrefHeight(900);
@@ -95,6 +96,7 @@ public class FPGameOver extends StackPane {
 		this.getChildren().add(restartButton);
 		this.getChildren().add(homeButtonGO);
 		
+
 	}
 	
 }
