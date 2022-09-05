@@ -4,17 +4,23 @@ package fallingpuzzle.model;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-
+import fallingpuzzle.controller.FPMainController;
+import fallingpuzzle.view.FPGameOver;
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Platform;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 
 
 public class FPGame {
 
 	
+	public Timer cades;
+	public Stage stage;
+	private Scene scene;
 	private static FPGame instance = null;
 	private Timer caduta;
 	private TimerTask task;
@@ -33,13 +39,13 @@ public class FPGame {
 	public FPGame(final Griglia g,final FPGraphics graphics) {
 		this.graphics=graphics;
 		griglia=g;
-		Timer cades=new Timer();
+		cades=new Timer();
 		TimerTask task=new TimerTask() {
 			@Override
 			public void run() {
 				Platform.runLater(new Runnable() {
 					public void run() {
-						graphics.gameOver();
+						gameOver();
 						punteggio();
 						if(cont==0) {
 							graphics.matrix();
@@ -55,6 +61,19 @@ public class FPGame {
 			}
 		};
 		cades.schedule(task,0,500);
+	}
+	
+	
+	public void gameOver() {
+		if(griglia.dead()==true) {
+			//cades.cancel();
+			FPGameOver game=new FPGameOver();
+			stage=(Stage) graphics.getScene().getWindow();
+			scene=new Scene(game);
+			stage.setScene(scene);
+			stage.show();
+			cades.cancel();
+		}
 	}
 	
 	public void resetta() {

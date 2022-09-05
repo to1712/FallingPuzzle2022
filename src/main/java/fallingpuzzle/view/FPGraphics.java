@@ -205,13 +205,7 @@ public class FPGraphics extends StackPane{
 		}	
 	}
 	
-	public void gameOver() {
-		if(griglia.dead()==true) {
-			
-			
-		}
-		
-	}
+	
 	
 	/*public void setPane(AnchorPane ach) {
 		pane.getChildren().add(ach);
