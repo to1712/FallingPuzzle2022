@@ -64,7 +64,7 @@ public class Griglia {
 				tipo=4;
 			
 			Mattoni m=new Mattoni(tipo, x, y);
-			if((x+m.getTipo())-1 <8 &&(m.getTipo()+size)<=maxsize) {
+			if((x+m.getTipo())-1<8 &&(m.getTipo()+size)<=maxsize) {
 				if(!this.e_sovrapposto(m.getTipo(), m.getWidth(), m.getHigh())) {
 					size+=m.getTipo();
 					this.mattone.add(m);
