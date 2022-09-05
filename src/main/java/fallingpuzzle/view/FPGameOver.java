@@ -17,7 +17,7 @@ public class FPGameOver extends StackPane {
 	public FPGameOver() {
 		this.setPrefHeight(900);
 		this.setPrefWidth(700);
-		img = new Image("/images/FallingBackGround.png");
+		img = new Image("/images/gameOver.png");
 		this.setBackground(new Background(new BackgroundImage(img,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 	}
 }

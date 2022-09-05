@@ -145,7 +145,7 @@ public class FPGraphics extends StackPane{
 		pausaButton.setTranslateX(575);
 		pausaButton.setTranslateY(20);
 		
-		point =  new Label("CIAO");
+		point =  new Label();
 		//point.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
 		point.setBackground(new Background(new BackgroundImage(labelImage,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 		point.setLayoutX(250);

@@ -27,6 +27,8 @@ public class FPapplication extends Application {
 			Parent root= FXMLLoader.load(getClass().getResource("/View/FPHome.fxml"));
 			Scene home= new Scene(root);
 			primaryStage.setScene(home);
+			primaryStage.setResizable(false);
+			primaryStage.setTitle("IGPE'S Project");
 			primaryStage.show();
 		}
 		catch (Exception e) {

@@ -32,11 +32,13 @@ public class FPGame {
 	private boolean muove=false;
 	private boolean reset=false;
 	public String point;
+	public DBConnection db;
 	
 
 	public FPGame() {}
 	
 	public FPGame(final Griglia g,final FPGraphics graphics) {
+		db= new DBConnection();
 		this.graphics=graphics;
 		griglia=g;
 		cades=new Timer();
@@ -63,7 +65,7 @@ public class FPGame {
 		cades.schedule(task,0,500);
 	}
 	
-	
+	/*metodo per la gestione del gameover nel quale viene memeorizzato lo score nel db*/
 	public void gameOver() {
 		if(griglia.dead()==true) {
 			//cades.cancel();
@@ -73,6 +75,7 @@ public class FPGame {
 			stage.setScene(scene);
 			stage.show();
 			cades.cancel();
+			db.insert(punti);
 		}
 	}
 	
