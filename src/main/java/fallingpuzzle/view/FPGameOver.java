@@ -6,6 +6,10 @@ package fallingpuzzle.view;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20ec3aedb940deab35e334cbfe23e67349c85597
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -34,9 +38,12 @@ public class FPGameOver extends StackPane {
 	
 	public Label actualPunteggio;
 	public Label maxPunteggio;
+<<<<<<< HEAD
 	
 
 
+=======
+>>>>>>> 20ec3aedb940deab35e334cbfe23e67349c85597
 
 	
 	public FPGameOver() {
@@ -94,7 +101,10 @@ public class FPGameOver extends StackPane {
 		this.getChildren().add(restartButton);
 		this.getChildren().add(homeButtonGO);
 		
+<<<<<<< HEAD
 
+=======
+>>>>>>> 20ec3aedb940deab35e334cbfe23e67349c85597
 	}
 	
 }
