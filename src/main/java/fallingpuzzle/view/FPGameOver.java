@@ -2,12 +2,13 @@ package fallingpuzzle.view;
 
 
 
-<<<<<<< HEAD
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-=======
->>>>>>> 7a06ce2c2a29355b37f659d34ca5843587f1b9ad
+
+
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -17,7 +18,7 @@ import javafx.scene.layout.StackPane;
 
 public class FPGameOver extends StackPane {
 	
-<<<<<<< HEAD
+
 	private Image img;
 	private Image rbImg;
 	private Image hbImg;
@@ -34,17 +35,14 @@ public class FPGameOver extends StackPane {
 	
 	public Label actualPunteggio;
 	public Label maxPunteggio;
-	
-=======
-	private Image img ;
->>>>>>> 7a06ce2c2a29355b37f659d34ca5843587f1b9ad
+
 	
 	public FPGameOver() {
 		this.setPrefHeight(900);
 		this.setPrefWidth(700);
 		img = new Image("/images/gameOver.png");
 		this.setBackground(new Background(new BackgroundImage(img,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-<<<<<<< HEAD
+
 		rbImg = new Image(getClass().getResourceAsStream("/images/playButtonGO.png"));
 		hbImg = new Image(getClass().getResourceAsStream("/images/homeButtonGO.png"));
 		
@@ -94,8 +92,6 @@ public class FPGameOver extends StackPane {
 		this.getChildren().add(restartButton);
 		this.getChildren().add(homeButtonGO);
 		
-=======
->>>>>>> 7a06ce2c2a29355b37f659d34ca5843587f1b9ad
 	}
 	
 }
