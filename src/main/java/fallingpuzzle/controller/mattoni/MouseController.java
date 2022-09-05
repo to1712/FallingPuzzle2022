@@ -23,7 +23,7 @@ public class MouseController     {
 	private Griglia griglia=null;
 	private FPGraphics graphics;
 	private FPGame game;
-	private int x,y=0;
+	private int x,y,temp=0;
 	private Mattoni mattoneSelezionato;
 	
 	public MouseController(Griglia griglia, FPGraphics graphics,FPGame game) {
@@ -40,6 +40,7 @@ public class MouseController     {
 			public void handle(MouseEvent e) {
 				x=((int) e.getX()/Settings.MATTONI_SIZE)%12;
 				y=((int) e.getY()/Settings.MATTONI_SIZE)%12;
+				temp=x;
 				mattoneSelezionato=griglia.getMattoni()[x][y];
 				if(mattoneSelezionato!=null)
 					mattoneSelezionato.setSelezionato(true);
@@ -49,12 +50,11 @@ public class MouseController     {
 		graphics.canvas.setOnMouseDragged(new EventHandler<MouseEvent>() {
 
 			public void handle(MouseEvent e) {
-					int w=((int) e.getX()/50)%12;
+					int w=((int) e.getX()/Settings.MATTONI_SIZE)%12;
 					if(w>x && x<8 && (w>0 && w<8)) {
 						//System.out.println("muovo a destra");
 						game.muovi(x, y, true);
 						x+=1;
-						
 					}
 					if(w<x && x>0 && x<8) {
 						//System.out.println("muovo a sinistra");
@@ -69,7 +69,9 @@ public class MouseController     {
 				System.out.println("Rilascio");
 				if(mattoneSelezionato!=null)
 					mattoneSelezionato.setSelezionato(false);
-				game.mouseRilasciato();
+				if(temp!=x)
+					game.mouseRilasciato();
+					
 			}
 		});
 	}
