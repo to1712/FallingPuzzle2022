@@ -31,11 +31,14 @@ public class FPGame {
 	private int move=0;
 	public String point;
 	public DBConnection db;
-	
+	public FPGameOver game;
+	private Music music;
 
 	public FPGame() {}
 	
-	public FPGame(final Griglia g,final FPGraphics graphics) {
+	public FPGame(final Griglia g,final FPGraphics graphics, Music music) {
+		game=new FPGameOver();
+		this.music = music;
 		db= new DBConnection();
 		this.graphics=graphics;
 		griglia=g;
@@ -67,16 +70,21 @@ public class FPGame {
 	public void gameOver() {
 		if(griglia.dead()==true) {
 			//cades.cancel();
-			FPGameOver game=new FPGameOver();
+			music.bm.stop();
 			stage=(Stage) graphics.getScene().getWindow();
 			scene=new Scene(game);
 			stage.setScene(scene);
 			stage.show();
 			cades.cancel();
 			db.insert(punti);
+			
 		}
 	}
 	
+	public FPGameOver getGO() {
+		return game;
+		
+	}
 	public void resetta() {
 		if(griglia.dead()==true) {
 			System.out.println("WE");
