@@ -41,6 +41,7 @@ public class FPGameOver extends StackPane {
 
 
 
+
 	
 	public FPGameOver() {
 		this.setPrefHeight(900);
