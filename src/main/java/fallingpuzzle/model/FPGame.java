@@ -33,8 +33,9 @@ public class FPGame {
 	public DBConnection db;
 	public FPGameOver game;
 	private Music music;
+	private boolean aggiungiRiga=false;
 
-	public FPGame() {}
+	//public FPGame() {}
 	
 	public FPGame(final Griglia g,final FPGraphics graphics, Music music) {
 		game=new FPGameOver();
@@ -54,8 +55,10 @@ public class FPGame {
 							graphics.matrix();
 						}
 						else {
-							setGravity();
+							//mouseRilasciato();
+							//setGravity();
 							graphics.matrix();
+							setGravity();
 						}
 						cont++;
 						
@@ -76,9 +79,9 @@ public class FPGame {
 			stage.setScene(scene);
 			stage.show();
 			game.actualPunteggio.setText("---SCORE---"+"\n"+"       "+point);
-			game.maxPunteggio.setText("---BEST---"+"\n"+"     "+Integer.toString(db.getMaxScore()));
 			cades.cancel();
 			db.insert(punti);
+			game.maxPunteggio.setText("---BEST---"+"\n"+"     "+Integer.toString(db.getMaxScore()));
 			
 		}
 	}
@@ -100,10 +103,9 @@ public class FPGame {
 	
 	public void mouseRilasciato() {
 		if(move>0)
-			griglia.generationRiga();
+			aggiungiRiga=true;
 		move=0;
 	}
-	
 	private void setGravity() {
 		griglia.deveCadere(true);
 		while(griglia.staCadendo()) {
@@ -113,6 +115,7 @@ public class FPGame {
 			}
 			int p=griglia.rigaPiena();
 			if(p!=0) {
+				//boolean
 				punti+=p;
 				this.griglia.deveCadere(true);
 				//System.out.println("Punti: "+p+" ");
@@ -120,7 +123,9 @@ public class FPGame {
 			point= Integer.toString(punti);
 			//graphics.matrix();
 		}
-		
+		if(aggiungiRiga==true)
+			griglia.generationRiga();
+		aggiungiRiga=false;
 		this.griglia.resettaMoltiplicatore();
 	}
 	

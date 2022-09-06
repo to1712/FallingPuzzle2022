@@ -198,7 +198,7 @@ public class Griglia {
 				}
 				punti+=16*moltiplicatore;
 				moltiplicatore+=1;
-				generationRiga();
+				//generationRiga();
 			}	
 		}
 		return punti;
