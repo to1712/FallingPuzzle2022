@@ -75,8 +75,8 @@ public class FPGame {
 			scene=new Scene(game);
 			stage.setScene(scene);
 			stage.show();
-			game.actualPunteggio.setText(point);
-			game.maxPunteggio.setText(Integer.toString(db.getMaxScore()));
+			game.actualPunteggio.setText("---SCORE---"+"\n"+"       "+point);
+			game.maxPunteggio.setText("---BEST---"+"\n"+"     "+Integer.toString(db.getMaxScore()));
 			cades.cancel();
 			db.insert(punti);
 			

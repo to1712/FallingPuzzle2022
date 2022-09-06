@@ -3,6 +3,7 @@ package fallingpuzzle.view;
 
 
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -57,37 +58,39 @@ public class FPGameOver extends StackPane {
 		restartButton.setBackground(null);
 		resImg.setFitHeight(140);
 		resImg.setFitWidth(140);
-		restartButton.setTranslateY(120);
-		restartButton.setTranslateX(-10);
+		restartButton.setTranslateY(130);
+		restartButton.setTranslateX(0);
 		restartButton.setGraphic(resImg);
 		
 		homeButtonGO = new Button();
 		homeButtonGO.setBackground(null);
 		homImg.setFitHeight(100);
 		homImg.setFitWidth(100);
-		homeButtonGO.setTranslateX(-10);
-		homeButtonGO.setTranslateY(220);
+		homeButtonGO.setTranslateX(0);
+		homeButtonGO.setTranslateY(250);
 		homeButtonGO.setGraphic(homImg);
 		
-		actualScore = new Image("/images/actualPunteggio.png");
-		actualScoreIV = new ImageView(actualScore);
+		actualScore = new Image("/images/actualPunteggio.png",250,110,false,false);
 		actualPunteggio = new Label();
-		//actualPunteggio.setBackground(new Background(new BackgroundImage(actualScore,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-		actualScoreIV.setFitWidth(250);
-		actualScoreIV.setFitHeight(100);
-		actualPunteggio.setGraphic(actualScoreIV);
 		actualPunteggio.setTranslateX(0);
 		actualPunteggio.setTranslateY(20);
+		actualPunteggio.setBackground(new Background(new BackgroundImage(actualScore,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+		actualPunteggio.setPrefHeight(110);
+		actualPunteggio.setPrefWidth(250);
 		
-		maxScore = new Image("/images/scorePiuGrande.png");
-		maxScoreIV = new ImageView(maxScore);
+		maxScore = new Image("/images/scorePiuGrande.png",350,100, false, false);
+		
 		maxPunteggio = new Label();		
-		//maxPunteggio.setBackground(new Background(new BackgroundImage(maxScore,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
-		maxScoreIV.setFitWidth(250);
-		maxScoreIV.setFitHeight(100);
-		maxPunteggio.setGraphic(maxScoreIV);
 		maxPunteggio.setTranslateX(0);
 		maxPunteggio.setTranslateY(-60);
+		maxPunteggio.setBackground(new Background(new BackgroundImage(maxScore,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
+		maxPunteggio.setPrefHeight(100);
+		maxPunteggio.setPrefWidth(350);
+		
+		actualPunteggio.setAlignment(Pos.CENTER);
+		maxPunteggio.setAlignment(Pos.CENTER);
+		actualPunteggio.setStyle("-fx-font-size: 15px; -fx-text-fill: black;");
+		maxPunteggio.setStyle("-fx-font-size: 15px; -fx-text-fill: black;");
 		//maxPunteggio.setText("WEEEEE");
 		/*maxPunteggio.setPrefHeight(100);
 		maxPunteggio.setPrefWidth(250);*/
