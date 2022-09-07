@@ -1,21 +1,14 @@
 package fallingpuzzle.controller;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.mattoni.MouseController;
-
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Music;
 import fallingpuzzle.view.FPGameOver;
 import fallingpuzzle.view.FPGraphics;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;

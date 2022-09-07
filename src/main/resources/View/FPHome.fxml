@@ -13,29 +13,15 @@
             <Image url="@../images/Falling.png" />
          </image>
       </ImageView>
-      <Button fx:id="playButtton" layoutX="145.0" layoutY="355.0" mnemonicParsing="false" onAction="#goToPlay" prefHeight="158.0" prefWidth="380.0" stylesheets="@../css/buttonStyle.css" textFill="#fffdfd">
+      <Button fx:id="playButtton" layoutX="235.0" layoutY="413.0" mnemonicParsing="false" onAction="#goToPlay" prefHeight="75.0" prefWidth="230.0" stylesheets="@../css/button.css" text="PLAY" textFill="#fffdfd">
          <font>
-            <Font name="System Bold" size="60.0" />
+            <Font name="System Bold" size="96.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="266.0" visible="false">
-               <image>
-                  <Image url="@../images/playButton.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
-      <Button fx:id="exitButton" layoutX="165.0" layoutY="524.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="158.0" prefWidth="301.0" style="-fx-background-color: transparent;" textFill="#f8f7f7">
+      <Button fx:id="exitButton" layoutX="235.0" layoutY="514.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="69.0" prefWidth="230.0" stylesheets="@../css/button.css" text="EXIT" textFill="#f8f7f7">
          <font>
             <Font name="System Bold" size="60.0" />
          </font>
-         <graphic>
-            <ImageView fitHeight="133.0" fitWidth="259.0" visible="false">
-               <image>
-                  <Image url="@../images/exitButton.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </Button>
    </children>
 </AnchorPane>

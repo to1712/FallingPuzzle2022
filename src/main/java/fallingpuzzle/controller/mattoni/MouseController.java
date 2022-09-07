@@ -1,25 +1,18 @@
 package fallingpuzzle.controller.mattoni;
 
 
-
-
-
 import fallingpuzzle.Settings;
-import fallingpuzzle.controller.FPGameController;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
 import fallingpuzzle.view.FPGraphics;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 public class MouseController     {
 
 	Color c=new Color(0, 0, 1, 1.0);
-	private final int DIM=50;
 	private Griglia griglia=null;
 	private FPGraphics graphics;
 	private FPGame game;

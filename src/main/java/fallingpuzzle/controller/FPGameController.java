@@ -2,8 +2,6 @@ package fallingpuzzle.controller;
 
 
 import java.io.IOException;
-
-import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.mattoni.MouseController;
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
@@ -12,20 +10,14 @@ import fallingpuzzle.view.FPGameOver;
 import fallingpuzzle.view.FPGraphics;
 import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -33,10 +25,8 @@ public class FPGameController  {
 	
 
 	private FPGraphics graphics;
-	private FPapplication fp;
 	private Music music;
 	private FPGame game;
-	private FPGameOver go;
 	 
 	
 	public FPGameController(FPGraphics graphics,Music music, FPGame game) {
