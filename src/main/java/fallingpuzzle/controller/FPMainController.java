@@ -11,7 +11,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -22,8 +21,6 @@ public class FPMainController  {
 	private Griglia griglia;
 	public Stage stage;
 	private Scene scene;
-	@FXML
-	private Button playButtton;
 	public FPMainController() {
 		
 	}

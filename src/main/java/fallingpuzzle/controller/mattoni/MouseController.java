@@ -8,11 +8,10 @@ import fallingpuzzle.model.Mattoni;
 import fallingpuzzle.view.FPGraphics;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+
 
 public class MouseController     {
 
-	Color c=new Color(0, 0, 1, 1.0);
 	private Griglia griglia=null;
 	private FPGraphics graphics;
 	private FPGame game;
