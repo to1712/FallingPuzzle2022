@@ -7,6 +7,7 @@ public class Music {
 	public Media media;
 	public MediaPlayer bm;
 	
+	
 	public Music() {
 		media = new Media(getClass().getResource("/music/backgroundMusic.mp3").toExternalForm());
 		bm = new MediaPlayer(media);

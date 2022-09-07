@@ -1,13 +1,12 @@
 package fallingpuzzle.model;
 
 import java.util.Random;
-import java.util.Timer;
+
 import java.util.Vector;
 
-import com.sun.tools.sjavac.comp.dependencies.PublicApiCollector;
 
-import javafx.event.Event;
-import javafx.event.EventHandler;
+
+
 
 
 

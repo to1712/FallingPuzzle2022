@@ -4,27 +4,24 @@ package fallingpuzzle.view;
 
 
 
-import java.io.IOException;
+
 
 import fallingpuzzle.controller.FPMainController;
-import fallingpuzzle.model.FPGame;
+
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Mattoni;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
-import javafx.scene.control.ContentDisplay;
+
 import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -36,8 +33,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
-import javafx.stage.Stage;
+
 
 public class FPGraphics extends StackPane{
 	
@@ -214,13 +210,6 @@ public class FPGraphics extends StackPane{
 		}	
 	}
 	
-	
-	
-	/*public void setPane(AnchorPane ach) {
-		pane.getChildren().add(ach);
-		
-		}*/
-	
 
 	public void pauseMenu() {
 		
@@ -261,8 +250,7 @@ public class FPGraphics extends StackPane{
 		pausa.getChildren().add(exitButton);
 		pauseBackground.getChildren().add(pausa);
 		pane.getChildren().add(pauseBackground);
-		//pane.getChildren().add(exitButton);
-		//pane.getChildren().add(homeButton);	
+			
 	}
 	
 }

@@ -1,6 +1,7 @@
 package fallingpuzzle.model;
 
 public class Mattoni {
+	
 	public static final Integer ONE=1;
 	public static final Integer TWO=2;
 	public static final Integer TREE=3;

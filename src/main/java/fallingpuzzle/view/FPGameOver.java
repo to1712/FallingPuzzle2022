@@ -16,7 +16,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
-import javafx.scene.text.Font;
+
 
 public class FPGameOver extends StackPane {
 	
@@ -95,9 +95,7 @@ public class FPGameOver extends StackPane {
 		
 		maxPunteggio.setStyle("-fx-font-size: 18px; -fx-text-fill: black; -fx-font-weight: bold;");
 		
-		//maxPunteggio.setText("WEEEEE");
-		/*maxPunteggio.setPrefHeight(100);
-		maxPunteggio.setPrefWidth(250);*/
+	
 		
 		this.getChildren().add(actualPunteggio);
 		this.getChildren().add(maxPunteggio);

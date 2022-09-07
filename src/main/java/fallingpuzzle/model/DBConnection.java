@@ -1,6 +1,6 @@
 package fallingpuzzle.model;
 
-import java.io.FileOutputStream;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.swing.text.Document;
+
 
 
 
@@ -40,13 +40,13 @@ public class DBConnection {
 		stmt.executeUpdate("INSERT INTO Punteggi VALUES ("+punti+") ");
 			//stmt.executeUpdate("INSERT INTO Punteggi VALUES (5) ");
 		     stmt.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		} catch (SQLException e) {			
 			e.printStackTrace();
 		}
 		
 	}
 	
+	/*metodo che calcola dal DB il punteggio massimo eseguito sul gioco */	
 	public void MaxScore() {
 		String query = "select max(score) from Punteggi";
 		PreparedStatement pstmt;
@@ -57,7 +57,7 @@ public class DBConnection {
 			maxScore = rs.getInt(1);
 			pstmt.close();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
@@ -67,12 +67,6 @@ public class DBConnection {
 		return maxScore;
 	}
 	
-	/*
-	public void generatePDF() {
-		String fileName = "Storico_Punteggi.pdf";
-		Document document = new Document();
-		PDFWriter.getIstance(document, new FileOutputStream(fileName));
-	}*/
 
     
 }

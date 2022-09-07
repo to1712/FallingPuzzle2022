@@ -4,13 +4,13 @@ package fallingpuzzle.model;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import fallingpuzzle.controller.FPMainController;
+
 import fallingpuzzle.view.FPGameOver;
 import fallingpuzzle.view.FPGraphics;
 import javafx.application.Platform;
-import javafx.scene.Node;
+
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+
 import javafx.stage.Stage;
 
 
@@ -86,13 +86,14 @@ public class FPGame {
 		}
 	}
 	
+	
 	public FPGameOver getGO() {
 		return game;
 		
 	}
 	public void resetta() {
 		if(griglia.dead()==true) {
-			System.out.println("WE");
+			System.out.println("reset");
 			reset=true;
 		}
 	}
@@ -101,11 +102,13 @@ public class FPGame {
         this.griglia.setMattoneSelezionato(x, y);
     }
 	
+	
 	public void mouseRilasciato() {
 		if(move>0)
 			aggiungiRiga=true;
 		move=0;
 	}
+	
 	private void setGravity() {
 		griglia.deveCadere(true);
 		while(griglia.staCadendo()) {
