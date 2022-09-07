@@ -16,6 +16,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 
 public class FPGameOver extends StackPane {
 	
@@ -90,8 +91,10 @@ public class FPGameOver extends StackPane {
 		
 		actualPunteggio.setAlignment(Pos.CENTER);
 		maxPunteggio.setAlignment(Pos.CENTER);
-		actualPunteggio.setStyle("-fx-font-size: 15px; -fx-text-fill: black;");
-		maxPunteggio.setStyle("-fx-font-size: 15px; -fx-text-fill: black;");
+		actualPunteggio.setStyle("-fx-font-size: 15px; -fx-text-fill: black; -fx-font-weight: bold;");
+		
+		maxPunteggio.setStyle("-fx-font-size: 18px; -fx-text-fill: black; -fx-font-weight: bold;");
+		
 		//maxPunteggio.setText("WEEEEE");
 		/*maxPunteggio.setPrefHeight(100);
 		maxPunteggio.setPrefWidth(250);*/

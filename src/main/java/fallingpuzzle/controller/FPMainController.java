@@ -1,20 +1,24 @@
 package fallingpuzzle.controller;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import fallingpuzzle.FPapplication;
 import fallingpuzzle.controller.mattoni.MouseController;
-import fallingpuzzle.model.DBConnection;
+
 import fallingpuzzle.model.FPGame;
 import fallingpuzzle.model.Griglia;
 import fallingpuzzle.model.Music;
 import fallingpuzzle.view.FPGameOver;
 import fallingpuzzle.view.FPGraphics;
-import javafx.application.Application;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -25,6 +29,8 @@ public class FPMainController  {
 	private Griglia griglia;
 	public Stage stage;
 	private Scene scene;
+	@FXML
+	private Button playButtton;
 	public FPMainController() {
 		
 	}
@@ -39,6 +45,7 @@ public class FPMainController  {
 		FPGameController controller=new FPGameController(graphics,music,game);
 		MouseController mouseController=new MouseController(griglia,graphics,game);
 		FPGameOver go = new FPGameOver();
+		
 		stage= (Stage)((Node)event.getSource()).getScene().getWindow();
 		scene=new Scene(graphics);
 		//scene=new Scene(go);
@@ -50,6 +57,9 @@ public class FPMainController  {
 	    void exitGame(ActionEvent event) {
 		 	System.exit(0);
 	    }
+
+
+	 
 	 
 		
 }

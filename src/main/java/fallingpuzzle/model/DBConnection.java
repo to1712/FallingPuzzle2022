@@ -1,11 +1,18 @@
 package fallingpuzzle.model;
 
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import javax.swing.text.Document;
+
+
+
+
 
 public class DBConnection {
 
@@ -59,5 +66,13 @@ public class DBConnection {
 	public int getMaxScore() {
 		return maxScore;
 	}
+	
+	/*
+	public void generatePDF() {
+		String fileName = "Storico_Punteggi.pdf";
+		Document document = new Document();
+		PDFWriter.getIstance(document, new FileOutputStream(fileName));
+	}*/
+
     
 }

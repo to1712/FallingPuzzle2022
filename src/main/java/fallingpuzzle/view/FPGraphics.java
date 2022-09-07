@@ -54,7 +54,7 @@ public class FPGraphics extends StackPane{
 	private Image pausaMenu = new Image(getClass().getResourceAsStream("/images/pausaMenu_preview_rev_1.png"));
 	private Image exitButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseExitButton_preview_rev_1.png"));
 	private Image homeButtonFrame = new Image(getClass().getResourceAsStream("/images/pauseHomeButton_preview_rev_1.png"));
-    private Image labelImage = new Image(getClass().getResourceAsStream("/images/score.png"));
+    private Image labelImage;
     public Image toggleImage = new Image(getClass().getResourceAsStream("/images/Volume_UP.png"));
 	
 	
@@ -68,6 +68,7 @@ public class FPGraphics extends StackPane{
 	private ImageView Frame2 = new ImageView();
 	private ImageView exitFrame = new ImageView(exitButtonFrame);
 	private ImageView homeFrame = new ImageView(homeButtonFrame);
+	
 	
 	
 	public Button pausaButton;
@@ -147,11 +148,12 @@ public class FPGraphics extends StackPane{
 		
 		point =  new Label();
 		//point.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
+		labelImage = new Image("/images/score.png",150,100,false,false);
 		point.setBackground(new Background(new BackgroundImage(labelImage,BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
 		point.setLayoutX(250);
 		point.setLayoutY(110);
-		point.setPrefHeight(66);
-		point.setPrefWidth(115);
+		point.setPrefHeight(100);
+		point.setPrefWidth(150);
 		//point.setContentDisplay(ContentDisplay.RIGHT);
 		point.setAlignment(Pos.CENTER);
 		point.setPadding(new Insets(10));

@@ -13,12 +13,12 @@
             <Image url="@../images/Falling.png" />
          </image>
       </ImageView>
-      <Button fx:id="playButtton" layoutX="145.0" layoutY="355.0" mnemonicParsing="false" onAction="#goToPlay" prefHeight="158.0" prefWidth="380.0" style="-fx-background-color: traspa;" textFill="#fffdfd">
+      <Button fx:id="playButtton" layoutX="145.0" layoutY="355.0" mnemonicParsing="false" onAction="#goToPlay" prefHeight="158.0" prefWidth="380.0" stylesheets="@../css/buttonStyle.css" textFill="#fffdfd">
          <font>
             <Font name="System Bold" size="60.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="150.0" fitWidth="266.0">
+            <ImageView fitHeight="150.0" fitWidth="266.0" visible="false">
                <image>
                   <Image url="@../images/playButton.png" />
                </image>
@@ -30,7 +30,7 @@
             <Font name="System Bold" size="60.0" />
          </font>
          <graphic>
-            <ImageView fitHeight="133.0" fitWidth="259.0">
+            <ImageView fitHeight="133.0" fitWidth="259.0" visible="false">
                <image>
                   <Image url="@../images/exitButton.png" />
                </image>
