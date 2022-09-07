@@ -25,9 +25,7 @@ public class FPGame {
 	private FPGraphics graphics=null;
 	private int punti=0;
 	private Griglia griglia=null;
-	private int cont=0;
 	private boolean reset=false;
-	private boolean muove=false;
 	private int move=0;
 	public String point;
 	public DBConnection db;
@@ -51,17 +49,9 @@ public class FPGame {
 					public void run() {
 						gameOver();
 						punteggio();
-						if(cont==0) {
-							graphics.matrix();
-						}
-						else {
-							//mouseRilasciato();
-							//setGravity();
-							graphics.matrix();
-							setGravity();
-						}
-						cont++;
-						
+						graphics.matrix();
+						setGravity();
+						aggiungiRigaMancante();
 					}
 				});
 			}
@@ -89,7 +79,12 @@ public class FPGame {
 	
 	public FPGameOver getGO() {
 		return game;
-		
+	}
+	
+	public void aggiungiRigaMancante() {
+		if(griglia.giocoSenzaRiga()==true) {
+			griglia.generationRiga();
+		}
 	}
 	public void resetta() {
 		if(griglia.dead()==true) {
@@ -118,13 +113,11 @@ public class FPGame {
 			}
 			int p=griglia.rigaPiena();
 			if(p!=0) {
-				//boolean
 				punti+=p;
 				this.griglia.deveCadere(true);
 				//System.out.println("Punti: "+p+" ");
 			}
 			point= Integer.toString(punti);
-			//graphics.matrix();
 		}
 		if(aggiungiRiga==true)
 			griglia.generationRiga();

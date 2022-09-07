@@ -179,8 +179,6 @@ public class Griglia {
 		int punti=0;
 		for(int x=HEIGHT-1; x>=0; x--) {
 			int cont=0;
-			//boolean 
-			//int 
 			for(int y=WIDTH-1; y>=0; y--) {
 				if(mattonMatrix[y][x]!=0) {
 					cont++;
@@ -224,6 +222,15 @@ public class Griglia {
 			}
 		}
 		return false;
+	}
+	
+	public boolean giocoSenzaRiga() {
+		for(int i=0; i<WIDTH; i++) {
+			if(mattonMatrix[i][11]!=0) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 
